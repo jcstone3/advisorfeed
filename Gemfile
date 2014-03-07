@@ -34,6 +34,67 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+#Development
+group :development do
+	gem 'bullet'
+	gem 'paint'
+	gem 'quiet_assets' #Removes Asset Pipeline Request
+	gem 'annotate'       #Annotating Models, Routes
+
+	#Quality
+  gem 'rails_best_practices', require: false
+  gem 'rubocop', require: false
+
+  #Security
+  gem 'brakeman', require: false
+
+  gem 'better_errors' #Only in Dev environment
+
+  #Automating with Guard
+	gem 'guard'
+	gem 'libnotify'
+  gem 'rb-inotify', require: false
+  gem 'guard-annotate'
+  gem 'guard-rails_best_practices'
+  gem 'guard-rubocop'
+  gem 'yard', require: false
+end
+
+#Testing
+group :test, :development do
+  gem 'cucumber-rails', require: false
+  gem 'rspec-rails'
+  #gem 'rspec-gc-control'
+  gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'guard'
+  gem 'guard-cucumber'
+  gem 'guard-rspec'
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
+# gem 'highline', '~> 1.6.9'
+  gem 'populator'
+  gem 'random_data'
+  gem 'faker'
+  gem 'parallel_tests'
+  gem 'zeus-parallel_tests'
+  gem 'email_spec'
+  gem 'action_mailer_cache_delivery'
+  gem 'letter_opener'
+end
+
+group :test do
+  gem 'capybara-screenshot'
+  gem 'zeus'
+  gem 'accept_values_for' #Rspec Macro to accept values in array https://github.com/bogdan/accept_values_for
+  gem 'simplecov'
+  gem 'syntax'
+end
+
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
