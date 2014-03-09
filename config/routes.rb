@@ -1,11 +1,10 @@
 AdvisorFeed::Application.routes.draw do
-  get "admin/index"
-  get "client/index"
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'admin#index'
+  root 'admin/reports#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

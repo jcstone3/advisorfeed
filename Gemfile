@@ -37,7 +37,7 @@ end
 #Authentication & Authorization
 gem 'devise'
 #gem 'devise_security_extension'
-gem 'devise_invitable', '~> 1.1.0'
+gem 'devise_invitable'
 gem 'devise-async'
 
 #Development
