@@ -40,6 +40,9 @@ gem 'devise'
 gem 'devise_invitable'
 gem 'devise-async'
 
+# Forms
+gem 'simple_form'
+
 #Development
 group :development do
 	gem 'bullet'
