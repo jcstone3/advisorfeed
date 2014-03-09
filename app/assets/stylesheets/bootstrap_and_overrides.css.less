@@ -28,3 +28,53 @@
 //
 // Example:
 // @linkColor: #ff0000;
+
+/************************************************************************************************
+/* Critical force fixes for font rendering improvement on OSX Safari/Chrome */
+/***********************************************************************************************/
+h1,h2,h3,h4,h5,h6 {
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+a {
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+.btn {
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+em {
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+table td {
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/***********************************************************************************************/
+/* LESS Variables */
+/***********************************************************************************************/
+// Bootstrap Changes
+@sansFontFamily:  "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@link-color: #F07957;
+@link-color-hover: #132C3B;
+@text-color: #6C6C6C;
+@border-color: #E0E0E0;
+@blockquote-color: #2894D8;
+@header-main-color: #3694b7;
+@light-bg-heading-one: #3B5568;
+@light-bg-heading-two: #6694B4;
+@dark-bg-heading-one: white;
+@dark-bg-heading-two: #3694B7;
+@popoverArrowColor: #3C4A4D;
+@popoverArrowWidth: 7px;
+
+// Custom colors
+@theme-primary: #3FC3D8;
+@button-primary : #F07957;
+@button-secondary: #F07957;
+@header-color: #3FC3D8;
+@modal-body-color: #41464A;
+@auth-form-color :#2D3134;
