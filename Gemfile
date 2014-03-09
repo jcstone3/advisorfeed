@@ -34,6 +34,12 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+#Authentication & Authorization
+gem 'devise'
+#gem 'devise_security_extension'
+gem 'devise_invitable', '~> 1.1.0'
+gem 'devise-async'
+
 #Development
 group :development do
 	gem 'bullet'
