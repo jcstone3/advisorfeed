@@ -19,7 +19,8 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
   </head>
-  <body>
+  <body class="<%= controller.controller_name %>-<%= controller.action_name %>">
+    <div class="color-bar"></div>
     <%= render "/layouts/shared/header" -%>
     <div class="container-fluid main-container">
       <div class="row-fluid">

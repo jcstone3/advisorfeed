@@ -2,17 +2,20 @@
   <div class='navbar-inner'>
     <div class="row-content">
       <div class='container-fluid'>
-        <a class='btn btn-navbar'>
+<!--         <a class='btn btn-navbar'>
           <span class='icon-bar'></span>
           <span class='icon-bar'></span>
           <span class='icon-bar'></span>
-        </a>
+        </a> -->
           <%= link_to image_tag('logo.png'), root_url, title: 'LT Buddy', alt: 'LT Buddy', class: 'brand'-%>
           <div class='container-fluid'>
             <ul class='nav pull-right home-header'>
-              <li id="sign"><%= link_to 'Cases', root_url, title: 'Go to your cases', class: 'btn btn-primary' -%></li>
-              <li><a href="/users/sign_out" data-method="delete" id="sign_out" rel="nofollow" title="Logout of Application">Logout</a></li>
-              <li><%= link_to 'Login', new_user_session_path, title: 'Login here' -%></li>
+              <img src="/assets/john.jpg" class="img-circle">
+              <div class="welcome">
+                <h5>Welcome, <em>John C. Stone</em></h5>
+                <h5>Admin Account</h5>
+              </div>
+              <i class="icon-cog"></i>
             </ul>
           </div><!--/.nav-collapse -->
       </div>
