@@ -78,12 +78,15 @@ table td {
 @header-color: #3FC3D8;
 @modal-body-color: #41464A;
 @auth-form-color :#2D3134;
+@theme-light-grey: #666969;
+@theme-dark-grey: #58585a;
+@theme-orange: #F59E33;
 
 /***********************************************************************************************/
 /* Color branding */
 /***********************************************************************************************/
 .color-bar {
-  background: linear-gradient(to right, #F6961E 0%,#F6961E 33%,#BCBDC0 66%,#58585A 100%);
+  background: linear-gradient(to right, @theme-orange 0%, @theme-orange 33%,#BCBDC0 66%,@theme-dark-grey 100%);
   height: 5px;
 }
 
@@ -93,10 +96,12 @@ table td {
   padding-top: 0.5em;
   font-family: lato;
   .icon-bar-chart {
-    color: #F6961E;
+    color: @theme-orange;
   }
 }
-
+.reports-index {
+  background: #F0F0F0;
+}
 /***********************************************************************************************/
 /* Navbar */
 /***********************************************************************************************/
@@ -134,7 +139,7 @@ table td {
       }
       h5:nth-child(2) {
         margin-top: 0;
-        color: #F59E33;
+        color: @theme-orange;
         text-transform: uppercase;
         font-size: 11px;
       }
@@ -253,5 +258,23 @@ button.btn, input[type="submit"].btn {
     margin-left: 60px;
     color: #f8f8f8;
     font-size: 11px;
+  }
+}
+
+/***********************************************************************************************/
+/* Cards */
+/***********************************************************************************************/
+.client-cards {
+  background: white;
+  padding: 30px;
+  margin-top: 30px;
+  border-radius: 10px;
+  border-bottom: 2px solid #DCDCDC;
+  border-right: 2px solid #DCDCDC;
+  .client-logo {
+    width: 100px;
+    height: 100px;
+    float: right;
+    border: 3px solid rgba(0, 0, 0, 0.1);
   }
 }
