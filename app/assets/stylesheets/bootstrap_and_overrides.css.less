@@ -78,3 +78,123 @@ table td {
 @header-color: #3FC3D8;
 @modal-body-color: #41464A;
 @auth-form-color :#2D3134;
+
+/***********************************************************************************************/
+/* Color branding */
+/***********************************************************************************************/
+.color-bar {
+  background: linear-gradient(to right, #F6961E 0%,#F6961E 33%,#BCBDC0 66%,#58585A 100%);
+  height: 5px;
+}
+
+.main-title {
+  font-size: 5em;
+  text-align: center;
+  padding-top: 0.5em;
+  font-family: lato;
+  .icon-bar-chart {
+    color: #F6961E;
+  }
+}
+
+/***********************************************************************************************/
+/* Forms */
+/***********************************************************************************************/
+.form-inputs {
+  label {
+    display: none;
+  }
+  .sign-check {
+    display: inherit;
+  }
+  #user_admin {
+    display: none;
+  }
+}
+.input-append input, .input-prepend input, .input-append select, .input-prepend select, .input-append .uneditable-input, .input-prepend .uneditable-input {
+  padding: 14px;
+}
+.input-prepend .add-on:first-child, .input-prepend .btn:first-child {
+  border-radius: 4px 0 0 4px;
+  background: white;
+  color: #BEC3C7;
+  padding: 14px;
+  font-size: 19px;
+}
+
+button.btn, input[type="submit"].btn {
+  background: #34495E;
+  color: white;
+  text-shadow: none;
+  font-weight: 700;
+  padding: 15px 30px;
+  font-size: 17px;
+  font-family: lato;
+  border: none;
+}
+
+.auth-form {
+  text-align: center;
+}
+
+.sign-in-form {
+  text-align: center;
+  font-family: lato;
+  color: #384450;
+  h1 {
+    padding-top: 1em;
+  }
+  h3 {
+    padding-bottom: 1em;
+  }
+}
+
+.home-btn {
+  background: white;
+  padding: 10px 30px;
+  color: #40464A;
+  &:hover {
+    background: #40464A;
+  }
+}
+
+/***********************************************************************************************/
+/* Flash Notifications */
+/***********************************************************************************************/
+.alert {
+  padding: 15px 0;
+  border-radius: 0px;
+  text-align: center;
+  i {
+    position: relative;
+    top: 3px;
+    color: #58C14A;
+    font-size: 20px;
+    padding-right: 7px;
+  }
+  em {
+    position: relative;
+  }
+}
+
+.alert-danger, .alert-error, .alert-success {
+  font-weight: 700;
+  font-size: 16px;
+  background-color: white;
+}
+
+/***********************************************************************************************/
+/* Flash Notifications */
+/***********************************************************************************************/
+.footer {
+  padding: 15px 0;
+  background: #111111;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  .copyright {
+    margin-left: 60px;
+    color: #f8f8f8;
+    font-size: 11px;
+  }
+}
