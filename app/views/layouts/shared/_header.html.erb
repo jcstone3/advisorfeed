@@ -1,0 +1,30 @@
+<div class='navbar navbar-fluid-top'>
+  <div class='navbar-inner'>
+    <div class="row-content">
+      <div class='container-fluid'>
+        <a class='btn btn-navbar'>
+          <span class='icon-bar'></span>
+          <span class='icon-bar'></span>
+          <span class='icon-bar'></span>
+        </a>
+          <%= link_to image_tag('logo.png'), cases_path, title: 'LT Buddy', alt: 'LT Buddy', class: 'brand'-%>
+        <% if !controller.controller_name.eql?("sign_up_steps") && !controller.controller_name.eql?("invitation_steps") && !controller.controller_name.eql?("confirmations") %>
+          <div class='container-fluid'>
+            <ul class='nav pull-right home-header'>
+              <li><a href="/#.section-small-features|2000" id="features">Features</a></li>
+
+              <li><%= link_to 'Pricing', pricing_path, title: 'Price points which match your budget' -%></li>
+              <% if current_user %>
+              <li id="sign"><%= link_to 'Cases', cases_path, title: 'Go to your cases', class: 'btn btn-primary' -%></li>
+              <li><a href="/users/sign_out" data-method="delete" id="sign_out" rel="nofollow" title="Logout of Application">Logout</a></li>
+              <% else -%>
+              <li><%= link_to 'Login', new_user_session_path, title: 'Login here' -%></li>
+              <li id="sign"><%= link_to 'Sign Up', beta_signup_path , title: 'Sign up for Beta today', class: 'btn btn-primary' -%></li>
+              <% end -%>
+            </ul>
+          </div><!--/.nav-collapse -->
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
