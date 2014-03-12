@@ -67,6 +67,7 @@ group :development do
   gem 'guard-rails_best_practices'
   gem 'guard-rubocop'
   gem 'yard', require: false
+  gem "binding_of_caller"
 end
 
 #Testing

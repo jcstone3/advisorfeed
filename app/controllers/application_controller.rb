@@ -2,13 +2,32 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+  # before_filter :configure_permitted_parameters, if: :devise_controller
+
+  def authenticate_admin!
+    if admin_signed_in?
+       admin_users_path
+     else
+      redirect_to new_admin_session_path :alert => "You must first log in to access this page"
+    end
+  end
+
+  def authenticate_user!
+    if user_signed_in?
+       users_root_path
+     else
+      redirect_to new_user_session_path :alert => "You must first log in to access this page"
+    end
+  end
+
 
   def after_sign_in_path_for(resource)
     if resource.is_a? User
       flash[:success] = "Welcome! You have signed up successfully."
+      users_root_path
     else #resource is an admin
       flash[:success] = "Welcome! You have signed up successfully."
-      root_path
+      admin_users_path
     end
   end
 
@@ -20,5 +39,15 @@ class ApplicationController < ActionController::Base
       flash[:success] = "You have signed out successfully."
       new_admin_session_path
     end
+  end
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :description, :address, :phone) }
+  end
+
+  def authenticate_inviter!
+    authenticate_admin!
   end
 end

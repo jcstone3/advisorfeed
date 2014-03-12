@@ -44,6 +44,8 @@ GEM
     better_errors (1.1.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     brakeman (2.4.1)
       erubis (~> 2.6)
       fastercsv (~> 1.5)
@@ -100,6 +102,7 @@ GEM
       nokogiri (>= 1.5.0)
       rails (>= 3.0.0)
     database_cleaner (1.2.0)
+    debug_inspector (0.0.2)
     devise (3.2.3)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -347,6 +350,7 @@ DEPENDENCIES
   action_mailer_cache_delivery
   annotate
   better_errors
+  binding_of_caller
   brakeman
   bullet
   capybara
