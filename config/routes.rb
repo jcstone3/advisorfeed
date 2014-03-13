@@ -1,19 +1,20 @@
 AdvisorFeed::Application.routes.draw do
-  devise_for :admins, :controllers => { :sessions => "admin/sessions", :registrations => "admin/registrations"} do
+  devise_for :admins, :controllers => { :sessions => "admin/sessions", :registrations => "admin/registrations", :invitations => 'admin/invitations'} do
     get 'admins/login' => 'admin/sessions#new', :as => "new_admin_session"
     get 'admins/logout' => 'admin/sessions#destroy', :as => "destroy_admin_session"
     get 'admins/sign-up' => 'admin/sessions#new', :as => "new_admin_session"
   end
 
-  devise_for :users, :controllers => { :invitations => 'users/invitations' }
+  devise_for :users
 
   #admin settingss
   namespace :admin do
     get '/users' => "users#index", :as => "users"
-    # root :to =>  "users#index"
+    root :to =>  "users#index"
     resources :users
   end
 
+  root :to => redirect("/users/sign_in")
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -68,9 +69,10 @@ AdvisorFeed::Application.routes.draw do
     #   # (app/controllers/admin/products_controller.rb)
     #   resources :reports
     # end
-  # root :to => 'dashboards#index'
+
+
   namespace :users do
-    get '/' => 'dashboards#index', :as => "user_index_page"
-    root :to => 'dashboards#index'
+    get '/dashboard' => 'dashboards#index'
   end
+
 end

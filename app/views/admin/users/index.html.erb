@@ -20,7 +20,8 @@
               <div class="row-fluid">
                 <a href="" class="btn">UPLOAD REPORT</a>
                 <a href="" class="btn">IMPERSONATE</a>
-                <span class="btn"><%= link_to "INVITE USER", new_invitation_path(:user) %></span>
+                <!-- <span class="btn"><%= link_to "INVITE USER", user_invitation_path(user) %></span> -->
+                <span class="btn"><%= link_to("INVITE USER", admin_invitation_path(:id => user.id), method: :post ) %></span>
               </div>
             </div>
           </div>
