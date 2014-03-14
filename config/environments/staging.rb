@@ -79,8 +79,8 @@ AdvisorFeed::Application.configure do
     :port => 587,
     :domain => "advisor-feed-stage.herokuapp.com",
     :authentication => :plain,
-    :user_name => "support.ltbuddy@icicletech.com",
-    :password => "Ltbuddy@129"
+    :user_name => "advisorfeedtest@gmail.com",
+    :password => "advisor@123"
   }
 
   # For a Exception Notifier configurable options

@@ -39,8 +39,8 @@ AdvisorFeed::Application.configure do
     :port => 587,
     :domain => "localhost",
     :authentication => :plain,
-    :user_name => "support.ltbuddy@icicletech.com",
-    :password => "Ltbuddy@129"
+    :user_name => "advisorfeedtest@gmail.com",
+    :password => "advisor@123"
   }
 
 end
