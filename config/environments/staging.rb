@@ -67,18 +67,18 @@ RevenueGrader::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
   config.assets.debug = true
-#   config.action_mailer.default_url_options = { :host => 'revenuegrader-staging.herokuapp.com' }
-#   config.action_mailer.perform_deliveries = true
-#   config.action_mailer.delivery_method = :smtp
-#   config.action_mailer.smtp_settings = {
-#   :enable_starttls_auto => true,
-#   :address => "smtp.gmail.com",
-#   :port => 587,
-#   :domain => "revenuegrader-staging.herokuapp.com",
-#   :authentication => :plain,
-#   :user_name => "noreply@revenuegrader.com",
-#   :password => "survey$33"
-# }
+  config.action_mailer.default_url_options = { :host => 'advisor-feed-stage.herokuapp.com' }
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => true,
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => "advisor-feed-stage.herokuapp.com",
+    :authentication => :plain,
+    :user_name => "support.ltbuddy@icicletech.com",
+    :password => "Ltbuddy@129"
+  }
 
   # For a Exception Notifier configurable options
   # config.middleware.use ExceptionNotifier,

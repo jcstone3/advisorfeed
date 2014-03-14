@@ -39,8 +39,8 @@ AdvisorFeed::Application.configure do
     :port => 587,
     :domain => "localhost",
     :authentication => :plain,
-    :user_name => "noreply@revenuegrader.com",
-    :password => "survey$33"
+    :user_name => "support.ltbuddy@icicletech.com",
+    :password => "Ltbuddy@129"
   }
 
 end

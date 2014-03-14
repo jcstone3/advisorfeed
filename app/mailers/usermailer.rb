@@ -1,5 +1,5 @@
 class Usermailer < ActionMailer::Base
-  default from: '"Revenue Architects" <noreply@revenuegrader.com>'
+  default from: '"Advisor Feed" <support.ltbuddy@icicletech.com>'
   def welcome(user)
     # @user = user
     # @url  = "http://www.revenuegrader.com/login"
