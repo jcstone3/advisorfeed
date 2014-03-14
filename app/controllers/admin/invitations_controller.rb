@@ -10,10 +10,4 @@ class Admin::InvitationsController < Devise::InvitationsController
       redirect_to admin_users_path
     end
   end
-
-  private
-
-  # def update_user
-  #   params.require(:user).permit(:invitation_token, :password, :password_confirmation)
-  # end
 end

@@ -12,5 +12,4 @@ class Usermailer < ActionMailer::Base
     #   format.html { render "usermailer/reset_password_instructions" }
     # end
   end
-
 end
