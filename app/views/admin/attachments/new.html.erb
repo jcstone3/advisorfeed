@@ -1,0 +1,15 @@
+<h2>Upload report for user</h2>
+
+<%= simple_form_for(@attachment, :url => admin_user_attachments_path, :html => { :multipart => true, :method => :post } ) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :file_name, :required => true, :autofocus => true, placeholder: "File Name" %>
+    <%= f.input :file_note, :required => true, placeholder: "File note" %>
+    <%= f.file_field :avatar, :required => true, placeholder: "Avatar" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Save report" %>
+  </div>
+<% end %>

@@ -42,5 +42,5 @@ AdvisorFeed::Application.configure do
     :user_name => "advisorfeedtest@gmail.com",
     :password => "advisor@123"
   }
-
+  Paperclip.options[:command_path] = "/usr/local/bin/"
 end
