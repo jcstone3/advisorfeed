@@ -49,6 +49,9 @@ gem 'simple_form'
 # Upload reports for user
 gem "paperclip"
 
+# Pagination
+gem 'will_paginate', '~> 3.0'
+
 #Development
 group :development do
 	gem 'bullet'
