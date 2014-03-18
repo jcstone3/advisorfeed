@@ -53,6 +53,11 @@ table td {
   -moz-osx-font-smoothing: grayscale !important;
 }
 
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
 /***********************************************************************************************/
 /* LESS Variables */
 /***********************************************************************************************/
@@ -82,6 +87,10 @@ table td {
 @theme-dark-grey: #58585a;
 @theme-orange: #F59E33;
 
+body {
+  margin-top: 90px;
+}
+
 /***********************************************************************************************/
 /* Color branding */
 /***********************************************************************************************/
@@ -106,6 +115,9 @@ table td {
 /***********************************************************************************************/
 /* Navbar */
 /***********************************************************************************************/
+.breadbar {
+  margin-top: 23px;
+}
 .navbar-inner {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
   background: white;
@@ -114,6 +126,7 @@ table td {
   .brand {
     img {
       height: 60px;
+      margin-left: 20px;
     }
   }
   .home-header {
@@ -268,7 +281,7 @@ button.btn, input[type="submit"].btn {
   position: fixed;
   bottom: 0;
   .copyright {
-    margin-left: 60px;
+    margin-left: 42px;
     color: #f8f8f8;
     font-size: 11px;
   }
@@ -279,16 +292,61 @@ button.btn, input[type="submit"].btn {
 /***********************************************************************************************/
 .client-cards {
   background: white;
-  padding: 30px;
   margin-top: 30px;
   border-radius: 10px;
   border-bottom: 2px solid #DCDCDC;
   border-right: 2px solid #DCDCDC;
+
+  h2 {
+    font-size: 24px;
+    margin-left: 20px;
+    color: #242529;
+    margin-bottom: 3px;
+    .icon-edit {
+      color: #111111;
+      float: right;
+      margin-right: 8px;
+      font-size: 20px;
+      margin-top: 12px;
+    }
+    .icon-remove {
+      color: #F07957;
+      float: right;
+      margin-right: 15px;
+      font-size: 20px;
+      margin-top: 12px;
+    }
+  }
+  p {
+    margin: 0 0 10px;
+    margin-left: 20px;
+    color: #979797;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
   .client-logo {
     width: 100px;
     height: 100px;
     float: right;
     border: 3px solid rgba(0, 0, 0, 0.1);
+  }
+  .client-operations {
+    border-right: 2px solid #DCDCDC;
+    border-radius: 0 0 10px 10px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding: 10px 0px;
+    .icons {
+      margin-left: 20px;
+      span {
+        a {
+          i {
+            color: #3E4347;
+            font-size: 14px;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
   }
 }
 

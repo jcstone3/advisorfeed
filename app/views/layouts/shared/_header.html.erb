@@ -1,4 +1,5 @@
-<div class='navbar navbar-fluid-top'>
+<div class='navbar navbar-fixed-top'>
+<div class="color-bar"></div>
   <div class='navbar-inner'>
     <div class="row-content">
       <div class='container-fluid'>
@@ -17,7 +18,7 @@
                   <h5>Admin Account</h5>
                 </div>
                 <i class="icon-cog"></i>
-                <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+                <%= link_to "<i class='icon-signout'></i>".html_safe, destroy_user_session_path, method: :delete %>
               </ul>
             </div><!--/.nav-collapse -->
           <% else %>

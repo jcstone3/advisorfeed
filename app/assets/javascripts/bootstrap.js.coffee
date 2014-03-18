@@ -4,3 +4,6 @@ jQuery ->
 
 $ ->
   $(".alert").show().delay(1000).fadeOut()
+
+$ ->
+  $('i').tooltip()
