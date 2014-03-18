@@ -31,6 +31,8 @@
         </div>
       </div><!--/row-->
     </div> <!-- /container -->
-    <%= render "/layouts/shared/footer" -%>
+    <% unless user_signed_in? %>
+      <%= render "/layouts/shared/footer" -%>
+    <% end %>
   </body>
 </html>
