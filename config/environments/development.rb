@@ -42,5 +42,5 @@ AdvisorFeed::Application.configure do
     :user_name => "noreply@revenuegrader.com",
     :password => "survey$33"
   }
-
+  Paperclip.options[:command_path] = "/usr/local/bin/"
 end

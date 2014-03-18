@@ -26,14 +26,31 @@ class Admin::UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find_by_id(params[:id])
+  end
+
+  def update
+    @user = User.find_by_id(params[:id])
+    respond_to do |format|
+      if @user.update(user_params)
+        format.html { redirect_to admin_users_path, notice: 'User was successfully updated.' }
+      else
+        Rails.logger.debug @user.errors.inspect
+        format.html { render action: 'edit' }
+      end
+    end
   end
 
   def show
   end
 
   def destroy
+    @user = User.find_by_id(params[:id])
+    @user.destroy
+    respond_to do |format|
+      format.html { redirect_to admin_users_path, notice: 'User was successfully deleted.' }
+    end
   end
-
 
   private
 
