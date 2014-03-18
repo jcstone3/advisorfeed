@@ -46,6 +46,9 @@ gem 'devise-async'
 # Forms
 gem 'simple_form'
 
+# Upload reports for user
+gem "paperclip"
+
 #Development
 group :development do
 	gem 'bullet'

@@ -1,1 +1,15 @@
-<h1> My Dashboard </h1>
+<h1> My Reports </h1>
+
+<% @attachments.each do |attachment|%>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="span8 offset2">
+          <%= attachment.file_name %>
+          <%= attachment.file_note %>
+          <%= image_tag attachment.avatar.url(:medium) %>
+        </div>
+      </div>
+    </div>
+  </div>
+<%end%>
