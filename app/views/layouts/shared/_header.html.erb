@@ -8,11 +8,12 @@
           <span class='icon-bar'></span>
           <span class='icon-bar'></span>
         </a> -->
-          <%= link_to image_tag('logo.png'), new_admin_session_path, title: 'Advisor Feed', alt: 'Advisor Feed', class: 'brand'-%>
+          <%#= link_to image_tag('logo.png'), new_admin_session_path, title: 'Advisor Feed', alt: 'Advisor Feed', class: 'brand'-%>
+          <h1 class="logo">Advisory<em>Feed</em></h1>
           <% if admin_signed_in? %>
             <div class='container-fluid'>
               <ul class='nav pull-right home-header'>
-                <img src="/assets/john.jpg" class="img-circle">
+                <!-- <img src="/assets/john.jpg" class="img-circle"> -->
                 <div class="welcome">
                   <h5>Welcome, <em>John C. Stone</em></h5>
                   <h5>Admin Account</h5>
