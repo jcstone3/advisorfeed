@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+#load seed admin user
+Admin.delete_all
+
+@admin = Admin.new
+@admin.email = "admin@advisorfeed.com"
+@admin.password = "advisor@123"
+@admin.password_confirmation = "advisor@123"
+@admin.save

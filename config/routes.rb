@@ -1,11 +1,25 @@
 AdvisorFeed::Application.routes.draw do
-  devise_for :admins
+  devise_for :admins, :controllers => { :sessions => "admin/sessions", :registrations => "admin/registrations", :invitations => 'admin/invitations'} do
+    get 'admins/login' => 'admin/sessions#new', :as => "new_admin_session"
+    get 'admins/logout' => 'admin/sessions#destroy', :as => "destroy_admin_session"
+    get 'admins/sign-up' => 'admin/sessions#new', :as => "new_admin_session"
+  end
+
   devise_for :users
+
+  #admin settingss
+  namespace :admin do
+    get '/users' => "users#index", :as => "users"
+    root :to =>  "users#index"
+    resources :users
+  end
+
+  root :to => redirect("/users/sign_in")
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'admin/reports#index'
+  # root 'admin/reports#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -50,9 +64,15 @@ AdvisorFeed::Application.routes.draw do
   #   resources :photos, concerns: :toggleable
 
   # Example resource route within a namespace:
-    namespace :admin do
-      # Directs /admin/products/* to Admin::ProductsController
-      # (app/controllers/admin/products_controller.rb)
-      resources :reports
-    end
+    # namespace :admin do
+    #   # Directs /admin/products/* to Admin::ProductsController
+    #   # (app/controllers/admin/products_controller.rb)
+    #   resources :reports
+    # end
+
+
+  namespace :users do
+    get '/dashboard' => 'dashboards#index'
+  end
+
 end

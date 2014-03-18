@@ -7,17 +7,33 @@
           <span class='icon-bar'></span>
           <span class='icon-bar'></span>
         </a> -->
-          <%= link_to image_tag('logo.png'), root_url, title: 'LT Buddy', alt: 'LT Buddy', class: 'brand'-%>
-          <div class='container-fluid'>
-            <ul class='nav pull-right home-header'>
-              <img src="/assets/john.jpg" class="img-circle">
-              <div class="welcome">
-                <h5>Welcome, <em>John C. Stone</em></h5>
-                <h5>Admin Account</h5>
-              </div>
-              <i class="icon-cog"></i>
-            </ul>
-          </div><!--/.nav-collapse -->
+          <%= link_to image_tag('logo.png'), new_admin_session_path, title: 'Advisor Feed', alt: 'Advisor Feed', class: 'brand'-%>
+          <% if admin_signed_in? %>
+            <div class='container-fluid'>
+              <ul class='nav pull-right home-header'>
+                <img src="/assets/john.jpg" class="img-circle">
+                <div class="welcome">
+                  <h5>Welcome, <em>John C. Stone</em></h5>
+                  <h5>Admin Account</h5>
+                </div>
+                <i class="icon-cog"></i>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+              </ul>
+            </div><!--/.nav-collapse -->
+          <% else %>
+            <% if user_signed_in? %>
+              <div class='container-fluid'>
+                <ul class='nav pull-right home-header'>
+                  <div class="welcome">
+                    <h5>Welcome, <em><%= current_user.email %></em></h5>
+                    <h5>User Account</h5>
+                  </div>
+                  <i class="icon-cog"></i>
+                  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+                </ul>
+              </div><!--/.nav-collapse -->
+            <% end %>
+          <% end %>
       </div>
     </div>
   </div>

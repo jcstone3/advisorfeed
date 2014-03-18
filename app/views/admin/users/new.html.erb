@@ -1,0 +1,18 @@
+<h2>Create New User</h2>
+
+<%= simple_form_for(@user, :url => admin_users_path, :html => { :method => :post } ) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :first_name, :required => true, :autofocus => true, placeholder: "First Name" %>
+    <%= f.input :last_name, :required => true, placeholder: "Last Name" %>
+    <%= f.input :email, :required => true, placeholder: "Email" %>
+    <%= f.input :description, placeholder: "Description" %>
+    <%= f.input :address, placeholder: "Address" %>
+    <%= f.input :phone, placeholder: "Phone Number" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Sign up" %>
+  </div>
+<% end %>
