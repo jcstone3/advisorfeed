@@ -1,18 +1,50 @@
-<h2>Create New User</h2>
-
-<%= simple_form_for(@user, :url => admin_users_path, :html => { :method => :post } ) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :first_name, :required => true, :autofocus => true, placeholder: "First Name" %>
-    <%= f.input :last_name, :required => true, placeholder: "Last Name" %>
-    <%= f.input :email, :required => true, placeholder: "Email" %>
-    <%= f.input :description, placeholder: "Description" %>
-    <%= f.input :address, placeholder: "Address" %>
-    <%= f.input :phone, placeholder: "Phone Number" %>
+<div class="sign-in-form">
+  <div class="row-fluid">
+    <div class="span8 offset2 centered">
+      <h1>Add A New Client</h1>
+      <h3>Please fill in the details to add a new client</h3>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Create User" %>
+  <div class="row-fluid">
+    <div class="centered">
+      <div class="auth-form">
+        <%= simple_form_for(@user, :url => admin_users_path, :html => { :method => :post } ) do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+            <%= f.input :first_name, :required => true, wrapper: :prepend, :autofocus => true, placeholder: "First Name" do %>
+              <span class="add-on"><i class="icon-user"></i></span>
+            <%= f.input_field :first_name, placeholder: "First Name" %>
+            <% end %>
+            <%= f.input :last_name, :required => true, wrapper: :prepend, :autofocus => true   do %>
+              <span class="add-on"><i class="icon-user"></i></span>
+            <%= f.input_field :last_name, placeholder: "Last Name" %>
+            <% end %>
+            <%= f.input :email, :required => true, wrapper: :prepend, :autofocus => true   do %>
+              <span class="add-on"><i class="icon-envelope"></i></span>
+            <%= f.input_field :email, placeholder: "Email" %>
+            <% end %>
+            <%= f.input :description, :required => true, wrapper: :prepend, :autofocus => true   do %>
+              <span class="add-on"><i class="icon-file-text"></i></span>
+            <%= f.input_field :description, placeholder: "Description" %>
+            <% end %>
+            <%= f.input :address, :required => true, wrapper: :prepend, :autofocus => true, placeholder: "Address" do %>
+              <span class="add-on"><i class="icon-picture"></i></span>
+            <%= f.input_field :address, placeholder: "Address" %>
+            <% end %>
+            <%= f.input :phone, :required => true, wrapper: :prepend, :autofocus => true   do %>
+              <span class="add-on"><i class="icon-phone"></i></span>
+            <%= f.input_field :phone, placeholder: "Phone Number" %>
+            <% end %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Create User" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-<% end %>
+</div>
+

@@ -55,6 +55,9 @@ gem "paperclip"
 #to download uploaded report
 gem 'wicked_pdf'
 
+# Pagination
+gem 'will_paginate', '~> 3.0'
+
 #Development
 group :development do
 	gem 'bullet'

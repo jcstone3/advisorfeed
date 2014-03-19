@@ -53,6 +53,11 @@ table td {
   -moz-osx-font-smoothing: grayscale !important;
 }
 
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
 /***********************************************************************************************/
 /* LESS Variables */
 /***********************************************************************************************/
@@ -82,12 +87,16 @@ table td {
 @theme-dark-grey: #58585a;
 @theme-orange: #F59E33;
 
+body {
+  margin-top: 90px;
+}
+
 /***********************************************************************************************/
 /* Color branding */
 /***********************************************************************************************/
 .color-bar {
   background: linear-gradient(to right, @theme-orange 0%, @theme-orange 33%,#BCBDC0 66%,@theme-dark-grey 100%);
-  height: 5px;
+  height: 3px;
 }
 
 .main-title {
@@ -99,20 +108,38 @@ table td {
     color: @theme-orange;
   }
 }
-.reports-index {
+.reports-index, .users-index {
   background: #F0F0F0;
 }
+
 /***********************************************************************************************/
 /* Navbar */
 /***********************************************************************************************/
+.breadbar {
+  margin-bottom: 30px;
+  padding: 0;
+  width: 60%;
+  margin-left: 20%;
+}
 .navbar-inner {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
   background: white;
   border-radius: 0;
   border: none;
-  .brand {
-    img {
-      height: 60px;
+  .logo {
+    margin-left: 20px;
+    color: #2c3e50;
+    font-size: 24px;
+    font-weight: 700;
+    float: left;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    em {
+      color: #7f8c8d;
+      text-transform: uppercase;
+      font-style: normal;
+      font-weight: 900;
+      font-size: 24px;
     }
   }
   .home-header {
@@ -124,8 +151,8 @@ table td {
     }
     .welcome {
       display: inline-block;
-      margin-top: 12px;
       margin-left: 13px;
+      margin-top: 8px;
       h5:nth-child(1) {
         margin-bottom: 0;
         font-size: 13px;
@@ -146,10 +173,11 @@ table td {
     }
     .icon-cog {
       cursor: pointer;
-      position: relative;
-      top: -17px;
-      left: 15px;
       font-size: 15px;
+      padding-left: 15px;
+    }
+    .icon-signout {
+      color: #F07957;
     }
   }
 }
@@ -204,7 +232,7 @@ button.btn, input[type="submit"].btn {
   font-family: lato;
   color: #384450;
   h1 {
-    padding-top: 1.5em;
+    padding-top: 0;
   }
   h3 {
     padding-bottom: 1em;
@@ -219,12 +247,62 @@ button.btn, input[type="submit"].btn {
     background: #40464A;
   }
 }
-
+.action-btn-left {
+  padding: 10px 20px;
+  background: #C93D2A;
+  font-weight: 700;
+  border-radius: 5px 0 0 5px;
+  float: right;
+  margin-top: 10px;
+  color: white !important;
+  i {
+    padding-right: 4px;
+  }
+}
+.action-btn-right {
+  padding: 10px 20px;
+  background: #E6614F;
+  font-weight: 700;
+  border-radius: 0 5px 5px 0;
+  float: right;
+  margin-top: 10px;
+  color: white !important;
+  i {
+    padding-right: 4px;
+  }
+}
+.action-report,.action-invite,.action-upload {
+  padding: 7px 8px;
+  font-size: 10px;
+  border-radius: 3px;
+  color: white !important;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-right: 15px;
+  i {
+    padding-right: 4px;
+  }
+}
+.action-report {
+  background: #9b59b6;
+}
+.action-upload {
+  background: #2980b9;
+}
+.action-invite {
+  background: #34495e;
+}
+.icons {
+  float: left;
+}
+.user-actions {
+  float: right;
+}
 /***********************************************************************************************/
 /* Flash Notifications */
 /***********************************************************************************************/
 .alert {
-  padding: 15px 0;
+  padding: 10px 0;
   border-radius: 0px;
   text-align: center;
   i {
@@ -237,12 +315,24 @@ button.btn, input[type="submit"].btn {
   em {
     position: relative;
   }
+  .close {
+    display: none;
+  }
 }
 
 .alert-danger, .alert-error, .alert-success {
   font-weight: 700;
-  font-size: 16px;
+  font-size: 15px;
   background-color: white;
+}
+
+.reports-index {
+  .alert {
+    position: absolute;
+    top: 85px;
+    width: 99.8%;
+    left: 0;
+  }
 }
 
 /***********************************************************************************************/
@@ -255,7 +345,7 @@ button.btn, input[type="submit"].btn {
   position: fixed;
   bottom: 0;
   .copyright {
-    margin-left: 60px;
+    margin-left: 42px;
     color: #f8f8f8;
     font-size: 11px;
   }
@@ -266,22 +356,119 @@ button.btn, input[type="submit"].btn {
 /***********************************************************************************************/
 .client-cards {
   background: white;
-  padding: 30px;
   margin-top: 30px;
   border-radius: 10px;
   border-bottom: 2px solid #DCDCDC;
   border-right: 2px solid #DCDCDC;
+
+  h2 {
+    font-size: 24px;
+    margin-left: 20px;
+    color: #242529;
+    margin-bottom: 3px;
+    .icon-edit {
+      color: #111111;
+      float: right;
+      margin-right: 8px;
+      font-size: 20px;
+      margin-top: 12px;
+    }
+    .icon-remove {
+      color: #F07957;
+      float: right;
+      margin-right: 15px;
+      font-size: 20px;
+      margin-top: 12px;
+    }
+  }
+  p {
+    margin: 0 0 10px;
+    margin-left: 20px;
+    color: #979797;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
   .client-logo {
     width: 100px;
     height: 100px;
     float: right;
     border: 3px solid rgba(0, 0, 0, 0.1);
   }
+  .client-operations {
+    border-right: 2px solid #DCDCDC;
+    border-radius: 0 0 10px 10px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding: 10px 0px;
+    .icons {
+      margin-left: 20px;
+      span {
+        a {
+          i {
+            color: #3E4347;
+            font-size: 14px;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
 }
 
-/* Admin Users style start */
-div.span1.new-user {
-  width: 90px;
-  float: right;
+/***********************************************************************************************/
+/* Table */
+/***********************************************************************************************/
+.client-table {
+  box-shadow: 0 1px 10px rgba(0,0,0,.1);
+  width: 60%;
+  margin-left: 20%;
+  tr {
+    background: white;
+  }
+  thead {
+    th {
+      padding: 20px 20px;
+      font-size: 18px;
+      font-weight: 900;
+    }
+  }
+  tbody {
+    tr {
+      td {
+        padding: 20px 20px;
+        border: none;
+        &:nth-child(1) {
+          font-weight: 700;
+          font-size: 16px;
+        }
+      }
+      .icon-remove {
+        color: #F07957;
+        font-size: 16px;
+      }
+      .icon-edit {
+        color: #40464A;
+        position: relative;
+        top: 1px;
+        margin-right: 7px;
+        font-size: 15px;
+      }
+      .icon-unlock {
+        color: #40464A;
+        font-size: 15px;
+        margin-right: 12px;
+      }
+    }
+    > tr:nth-child(odd) > td, > tr:nth-child(odd) > th {
+      background: #F7F7F7;
+    }
+  }
 }
-/* Admin Users style end */
+
+.pagination-container {
+  width: 60%;
+  margin-left: 20%;
+  padding-left: 0;
+  .pagination {
+    float: right;
+  }
+}

@@ -20,7 +20,6 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
   </head>
   <body class="<%= controller.controller_name %>-<%= controller.action_name %>">
-    <div class="color-bar"></div>
     <%= render "/layouts/shared/header" -%>
     <div class="container-fluid main-container">
       <div class="row-fluid">
@@ -33,11 +32,16 @@
             <%= link_to "Change your password", edit_user_registration_path %>
             <%= yield %>
           <% else %>
+            <% unless admin_signed_in? %>
+              <h1 class="main-title">AdvisorFeed <i class="icon-bar-chart"></i> </h1>
+            <% end %>
             <%= yield %>
           <% end %>
         </div>
       </div><!--/row-->
     </div> <!-- /container -->
-    <%= render "/layouts/shared/footer" -%>
+    <% unless admin_signed_in? %>
+      <%= render "/layouts/shared/footer" -%>
+    <% end %>
   </body>
 </html>

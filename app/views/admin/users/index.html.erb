@@ -1,34 +1,49 @@
-<div class="span1 btn new-user" data-original-title="" title="">
-  <%= link_to "New User", new_admin_user_path %>
-</div>
-
-<% @users.each do |user|%>
-  <div class="container-fluid">
-    <div class="row-fluid">
-      <div class="span12">
-        <div class="span8 offset2">
-          <div class="row-fluid client-cards">
-            <div class="span10">
-              <div class="row-fluid">
-                <h2><%= user.first_name %>&nbsp;&nbsp;<%= user.last_name %></h2>
-              </div>
-              <div class="row-fluid">
-                <div class="span11">
-                  <p><%= user.description %></p>
-                </div>
-              </div>
-              <div class="row-fluid">
-                <!-- <a href="" class="btn">UPLOAD REPORT</a> -->
-                <span class="btn"><%= link_to "UPLOAD REPORT", new_admin_user_attachments_path(:user_id => user.id) %></span>
-                <a href="" class="btn">IMPERSONATE</a>
-                <span class="btn"><%= link_to("INVITE USER", admin_invitation_path(:id => user.id), method: :post ) %></span>
-              </div>
-            </div>
-          </div>
-          <span class="btn"><%= link_to("EDIT USER", edit_admin_user_path(:id => user.id)) %></span>
-          <span class="btn"><%= link_to("DELETE USER", admin_user_path(:id => user.id), method: :delete ) %></span>
-        </div>
-      </div>
+<div class="container-fluid breadbar">
+  <div class="row-fluid">
+    <div class="span4">
+      <h2>Clients</h2>
+    </div>
+    <div class="span8">
+      <a href="" class="action-btn-right"><i class="icon-list"></i> Upload List</a><%= link_to "<i class='icon-plus'></i> Add Client".html_safe, new_admin_user_path,  { :class=>"action-btn-left" } %>
     </div>
   </div>
-<%end%>
+</div>
+
+<div class="row-fluid">
+  <table class="table client-table table-striped">
+    <thead>
+      <tr>
+        <th>Clients</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody class="table-items">
+      <% @users.each do |user| %>
+      <tr>
+        <td><%= user.first_name %><%= user.last_name %></td>
+        <td>
+          <div class="icons">
+            <%= link_to "<i class='icon-cloud-upload'></i> Upload Report".html_safe, new_admin_user_attachments_path(:user_id => user.id),  { :class=>"action-upload" } %></span>
+            <a href="" class="action-report"><i class="icon-bar-chart"></i> View Reports</a>
+
+            <%= link_to("<i class='icon-envelope'></i> Invite User".html_safe, admin_invitation_path(:id => user.id), method: :post, :class => "action-invite") %>
+          </div>
+
+          <div class="user-actions">
+            <span class=""><a href="" class=""><i data-toggle='tooltip' title='Reset Password' class="icon-unlock"></i> </a></span>
+            <span class=""><%= link_to("<i data-toggle='tooltip' title='Edit Client Details' class='icon-edit'></i>".html_safe, edit_admin_user_path(:id => user.id)) %></span>
+            <span class=""><%= link_to("<i data-toggle='tooltip' title='Delete Client' class='icon-remove'></i>".html_safe, admin_user_path(:id => user.id), method: :delete ) %></span>
+          </div>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="container-fluid pagination-container">
+  <div class="row-fluid">
+    <div class="span12">
+      <%= will_paginate @posts, :previous_label => '<i class="icon-chevron-left"></i>'.html_safe, :next_label => '<i class="icon-chevron-right"></i>'.html_safe %>
+    </div>
+  </div>
+</div>
