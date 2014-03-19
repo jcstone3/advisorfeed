@@ -44,7 +44,7 @@ class ApplicationController < ActionController::Base
   def authenticate_httpuser
     if Rails.env.staging?
       authenticate_or_request_with_http_basic do |username, password|
-        username == "advisor" && password == "advisor@123"
+        username == "advisor" && password == "testadvisor"
       end
     end
   end
