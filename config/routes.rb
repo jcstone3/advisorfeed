@@ -12,6 +12,8 @@ AdvisorFeed::Application.routes.draw do
     get '/users' => "users#index", :as => "users"
     root :to =>  "users#index"
     resources :users do
+      get '/download_report' => "users#download_report", :as => "download_report"
+      get '/destroy_report' => "users#destroy_report", :as => "destroy_report"
       get '/view_reports' => "users#view_reports", :as => "view_reports"
       resource :attachments
     end

@@ -7,7 +7,8 @@
         <div class="span8 offset2">
           <%= attachment.file_name %>
           <%= attachment.file_note %>
-          <%= link_to 'Download Report', users_download_report_path(:id => attachment.id), class: "btn btn-info" %>
+          <%= link_to 'Download Report', admin_user_download_report_path(:id => attachment.id), class: "btn btn-info" %>
+          <%= link_to 'Delete Report', admin_user_destroy_report_path(:id => attachment.id), class: "btn btn-info" %>
         </div>
       </div>
     </div>
