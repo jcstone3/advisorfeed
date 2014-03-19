@@ -23,9 +23,8 @@
         <td><%= user.first_name %><%= user.last_name %></td>
         <td>
           <div class="icons">
-            <%= link_to "<i class='icon-cloud-upload'></i> Upload Report".html_safe, new_admin_user_attachments_path(:user_id => user.id),  { :class=>"action-upload" } %></span>
-            <a href="" class="action-report"><i class="icon-bar-chart"></i> View Reports</a>
-
+            <%= link_to "<i class='icon-cloud-upload'></i> Upload Report".html_safe, new_admin_user_attachments_path(:user_id => user.id),  { :class=>"action-upload" } %>
+            <%= link_to "<i class='icon-bar-chart'></i> View Reports".html_safe, admin_user_view_reports_path(:user_id => user.id),  { :class=>"action-report" } %>
             <%= link_to("<i class='icon-envelope'></i> Invite User".html_safe, admin_invitation_path(:id => user.id), method: :post, :class => "action-invite") %>
           </div>
 

@@ -52,6 +52,11 @@ class Admin::UsersController < ApplicationController
     end
   end
 
+  def view_reports
+    user = User.find_by_id(params[:user_id])
+    @attachments = user.attachments
+  end
+
   private
 
   def user_params
