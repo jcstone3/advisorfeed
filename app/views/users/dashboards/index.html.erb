@@ -8,6 +8,10 @@
           <%= attachment.file_name %>
           <%= attachment.file_note %>
           <%= image_tag attachment.avatar.url(:medium) %>
+          <%= attachment.avatar.url %>
+          <%= link_to 'Download Report', attachment.avatar.url, class: "btn btn-info" %>
+          <%= link_to image_tag(attachment.avatar.url(:thumb)), attachment.avatar.url(:original) %>
+          <a href="<%= attachment.avatar.url %>" class="btn btn-primary">Download</a>
         </div>
       </div>
     </div>
