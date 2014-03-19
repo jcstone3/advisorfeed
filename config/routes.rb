@@ -75,6 +75,7 @@ AdvisorFeed::Application.routes.draw do
 
 
   namespace :users do
+    get '/download_report' => 'dashboards#download_report'
     get '/dashboard' => 'dashboards#index'
   end
 
