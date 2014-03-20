@@ -10,9 +10,11 @@ AdvisorFeed::Application.routes.draw do
   #admin settingss
   namespace :admin do
     get '/users' => "users#index", :as => "users"
-    post '/upload_report' => "users#upload_report", :as => "upload_report"
     root :to =>  "users#index"
     resources :users do
+      get '/download_report' => "users#download_report", :as => "download_report"
+      get '/destroy_report' => "users#destroy_report", :as => "destroy_report"
+      get '/view_reports' => "users#view_reports", :as => "view_reports"
       resource :attachments
     end
   end
@@ -75,6 +77,7 @@ AdvisorFeed::Application.routes.draw do
 
 
   namespace :users do
+    get '/download_report' => 'dashboards#download_report'
     get '/dashboard' => 'dashboards#index'
   end
 

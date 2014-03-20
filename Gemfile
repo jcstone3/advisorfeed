@@ -32,6 +32,9 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+#AWS - uploading reports on s3 bucket
+gem 'aws-sdk'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -48,6 +51,9 @@ gem 'simple_form'
 
 # Upload reports for user
 gem "paperclip"
+
+#to download uploaded report
+gem 'wicked_pdf'
 
 # Pagination
 gem 'will_paginate', '~> 3.0'
