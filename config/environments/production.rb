@@ -96,4 +96,10 @@ AdvisorFeed::Application.configure do
   # :email_prefix => "[RevenueGrader Exception]",
   # :sender_address => %{ "RevenueGrader" <admin@revenuegrader.com> },
   # :exception_recipients => %{"admin@revenuegrader.com"}
+
+  #For S3
+  ENV['AWS_ACCESS_KEY_ID'] = 'AKIAIFXHIBQNJEYRKQAA'
+  ENV['AWS_SECRET_ACCESS_KEY'] = '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'
+  ENV["S3_BUCKET_NAME"] = 'advisor_prod'
+  ENV["HOST"] = 'advisor_prod.s3-website-us-east-1.amazonaws.com'
 end

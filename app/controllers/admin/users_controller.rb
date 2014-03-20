@@ -52,6 +52,29 @@ class Admin::UsersController < ApplicationController
     end
   end
 
+  def view_reports
+    user = User.find_by_id(params[:user_id])
+    @attachments = user.attachments
+  end
+
+  def download_report
+    attachment_record = Attachment.find(params[:id])
+    data = open(attachment_record.avatar.url)
+    send_data data.read, filename: attachment_record.avatar_file_name,
+                         type: attachment_record.avatar_content_type,
+                         disposition: 'attachment',
+                         stream: 'true',
+                         buffer_size: '4096'
+  end
+
+  def destroy_report
+    @attachment_record = Attachment.find(params[:id])
+    @attachment_record.destroy
+    respond_to do |format|
+      format.html { redirect_to admin_user_view_reports_path(:user_id => @attachment_record.user_id), notice: 'User report successfully deleted.' }
+    end
+  end
+
   private
 
   def user_params
