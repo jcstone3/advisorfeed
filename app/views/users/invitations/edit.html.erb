@@ -19,7 +19,7 @@
 
             <%= f.input :password_confirmation, required: true, wrapper: :prepend, error: true do %>
               <span class="add-on"><i class="icon-lock"></i></span>
-            <%= f.input_field :password_confirmation, placeholder: "Password" %>
+            <%= f.input_field :password_confirmation, placeholder: "Password Confirmation" %>
             <% end %>
 
           <%= f.submit t("devise.invitations.edit.submit_button"), :class => 'btn small' %>
