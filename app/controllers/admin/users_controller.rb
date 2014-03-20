@@ -13,7 +13,7 @@ class Admin::UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to admin_users_path, notice: 'User was successfully created.' }
+        format.html { redirect_to admin_users_path, notice: "#{@user.first_name}#{' '}#{@user.last_name} was successfully created." }
       else
         Rails.logger.debug @user.errors.inspect
         format.html { render action: 'new' }
@@ -33,7 +33,7 @@ class Admin::UsersController < ApplicationController
     @user = User.find_by_id(params[:id])
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to admin_users_path, notice: 'User was successfully updated.' }
+        format.html { redirect_to admin_users_path, notice: "#{@user.first_name}#{' '}#{@user.last_name} was successfully updated." }
       else
         Rails.logger.debug @user.errors.inspect
         format.html { render action: 'edit' }
@@ -69,9 +69,10 @@ class Admin::UsersController < ApplicationController
 
   def destroy_report
     @attachment_record = Attachment.find(params[:id])
+    @user = User.find_by_id(@attachment_record.user_id)
     @attachment_record.destroy
     respond_to do |format|
-      format.html { redirect_to admin_user_view_reports_path(:user_id => @attachment_record.user_id), notice: 'User report successfully deleted.' }
+      format.html { redirect_to admin_user_view_reports_path(:user_id => @attachment_record.user_id), notice: "Successfully deleted #{@user.first_name}#{' '}#{@user.last_name} report." }
     end
   end
 
