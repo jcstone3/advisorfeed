@@ -1,15 +1,79 @@
-<h1> My Reports </h1>
+<div class="container-fluid client-dash">
+  <div class="row-fluid">
+    <div class="span8 offset2">
+      <div class="row-fluid">
+        <div class="span12">
+          <div class="span5">
+            <div class="big-page">
+              <div class="page-content">
+                <h2>Marc & Spencer, Report Oct 2013</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, optio fugiat nihil incidunt fugit rem ipsa ducimus. Dicta, labore, corporis quam quis ullam blanditiis quisquam excepturi perspiciatis exercitationem commodi architecto!
+                </p>
+              </div>
+              <i class="icon-file-text"></i>
+            </div>
+          </div>
+          <div class="span7">
+            <h2 class="main-doc-title">Marc & Spencer, Report Oct 2013</h2>
+            <p class="desciption">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, at, fugit, quos corrupti necessitatibus similique autem possimus dolorum dignissimos natus nihil harum voluptatem temporibus libero ex id beatae assumenda maiores?
+            </p>
+            <h5 class="main-doc-upload-date">15th October 2013</h5>
+            <a href="" class="action-btn-left main-doc-download"><i class="icon-cloud-download"></i><span>Download</span></a>
+          </div>
+        </div>
+      </div>
 
-<% @attachments.each do |attachment|%>
-  <div class="container-fluid">
-    <div class="row-fluid">
-      <div class="span12">
-        <div class="span8 offset2">
-          <%= attachment.file_name %>
-          <%= attachment.file_note %>
-          <%= image_tag attachment.avatar.url(:medium) %>
+      <div class="row-fluid prev-reports-header">
+        <div class="span12">
+          <h2>Previous Reports</h2>
+        </div>
+      </div>
+
+      <div class="row-fluid prev-reports">
+        <div class="span12">
+          <div class="span4">
+            <div class="big-page">
+              <div class="page-content">
+                <h2>Peter Russo, Report Feb 2013</h2>
+                <p>
+                   blanditiis quisquam excepturi perspiciatis exercitationem commodi architecto!
+                </p>
+              </div>
+              <i class="icon-file-text"></i>
+            </div>
+            <h3>Peter Russo, Report Feb 2013</h3>
+            <a href="" class="action-btn-left main-doc-download"><i class="icon-cloud-download"></i><span>Download</span></a>
+          </div>
+          <div class="span4">
+            <div class="big-page">
+              <div class="page-content">
+                <h2>Clyde & Donnovan, Report Jun 2013</h2>
+                <p>
+                   blanditiis quisquam excepturi perspiciatis exercitationem commodi architecto!
+                </p>
+              </div>
+              <i class="icon-file-text"></i>
+            </div>
+            <h3>Clyde & Donnovan, Report Jun 2013</h3>
+            <a href="" class="action-btn-left main-doc-download"><i class="icon-cloud-download"></i><span>Download</span></a>
+          </div>
+          <div class="span4">
+            <div class="big-page">
+              <div class="page-content">
+                <h2>The White House, Report Jan 2013</h2>
+                <p>
+                   blanditiis quisquam excepturi perspiciatis exercitationem commodi architecto!
+                </p>
+              </div>
+              <i class="icon-file-text"></i>
+            </div>
+            <h3>The White House, Report Jan 2013</h3>
+            <a href="" class="action-btn-left main-doc-download"><i class="icon-cloud-download"></i><span>Download</span></a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-<%end%>
+</div>
