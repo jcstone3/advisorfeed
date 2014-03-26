@@ -15,4 +15,7 @@ class Attachment < ActiveRecord::Base
 
   # validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   validates_attachment :avatar, content_type: { content_type: "application/pdf" }
+  validates_presence_of :file_name, :message => "Can't be blank"
+  validates_presence_of :file_note, :message => "Can't be blank"
+  validates_attachment_presence :avatar
 end
