@@ -7,8 +7,8 @@
     <%= f.input :first_name, :required => true, :autofocus => true, placeholder: "First Name" %>
     <%= f.input :last_name, :required => true, placeholder: "Last Name" %>
     <%= f.input :email, :required => true, placeholder: "Email" %>
-    <%= f.input :description, placeholder: "Description" %>
-    <%= f.input :address, placeholder: "Address" %>
+    <%= f.input :description, placeholder: "Description", as: :text %>
+    <%= f.input :address, placeholder: "Address", as: :text %>
     <%= f.input :phone, placeholder: "Phone Number" %>
   </div>
 
