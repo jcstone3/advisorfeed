@@ -3,7 +3,8 @@ class Users::DashboardsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @attachments = current_user.attachments
+    @latest_attachment = current_user.attachments.order('created_at desc').first
+    @previous_attachments = current_user.attachments.order('created_at desc').drop(1)
   end
 
   def download_report
