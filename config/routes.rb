@@ -1,5 +1,5 @@
 AdvisorFeed::Application.routes.draw do
-  devise_for :admins, :controllers => { :sessions => "admin/sessions", :registrations => "admin/registrations", :invitations => 'admin/invitations'} do
+  devise_for :admins, :controllers => { :sessions => "admin/sessions", :invitations => 'admin/invitations'} do
     get 'admins/login' => 'admin/sessions#new', :as => "new_admin_session"
     get 'admins/logout' => 'admin/sessions#destroy', :as => "destroy_admin_session"
     get 'admins/sign-up' => 'admin/sessions#new', :as => "new_admin_session"

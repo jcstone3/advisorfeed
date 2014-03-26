@@ -35,7 +35,7 @@
           <div class="user-actions">
             <span class=""><a href="" class=""><i data-toggle='tooltip' title='Reset Password' class="icon-unlock"></i> </a></span>
             <span class=""><%= link_to("<i data-toggle='tooltip' title='Edit Client Details' class='icon-edit'></i>".html_safe, edit_admin_user_path(:id => user.id)) %></span>
-            <span class=""><%= link_to("<i data-toggle='tooltip' title='Delete Client' class='icon-remove'></i>".html_safe, admin_user_path(:id => user.id), method: :delete ) %></span>
+            <span class=""><%= link_to("<i data-toggle='tooltip' title='Delete Client' class='icon-remove'></i>".html_safe, admin_user_path(:id => user.id), method: :delete, :confirm => 'Are you sure?' ) %></span>
           </div>
         </td>
       </tr>

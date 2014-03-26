@@ -4,10 +4,11 @@
       <div class="row-fluid">
         <div class="span12">
           <div class="span7">
-            <h2>Client: Dolche & Gobbana</h2>
+            <h2>Client: &nbsp;<%= @user.first_name %> &nbsp; <%= @user.last_name %></h2>
           </div>
           <div class="span5">
             <%= link_to "<i class='icon-cloud-upload'></i> Upload Report".html_safe, new_admin_user_path,  { :class=>"action-btn-left" } %>
+            <%= link_to "<i class='icon-cloud-upload'></i> Upload Report".html_safe, new_admin_user_attachments_path(:user_id => @user.id),  { :class=>"action-btn-left" } %>
           </div>
         </div>
       </div>
@@ -95,3 +96,68 @@
     </div>
   </div>
 </div>
+
+<div class="container-fluid client-dash">
+  <div class="row-fluid">
+    <div class="span8 offset2">
+      <!-- latest report start -->
+      <% if @latest_attachment.present? %>
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="span5">
+              <div class="big-page">
+                <div class="page-content">
+                  <h2><%= @latest_attachment.file_name %></h2>
+                  <p>
+                    <%= @latest_attachment.file_note %>
+                  </p>
+                </div>
+                <i class="icon-file-text"></i>
+              </div>
+            </div>
+            <div class="span7">
+              <h2 class="main-doc-title"><%= @latest_attachment.file_name %></h2>
+              <p class="desciption">
+                <%= @latest_attachment.file_note %>
+              </p>
+              <%= link_to "<i class='icon-cloud-download'></i> Download Report".html_safe, users_download_report_path(:id => @latest_attachment.id),  { :class=>"action-btn-left main-doc-download" } %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <!-- latest report end -->
+
+          <div class="row-fluid prev-reports-header">
+            <div class="span12">
+              <h2>Previous Reports</h2>
+            </div>
+          </div>
+
+          <div class="row-fluid prev-reports">
+            <div class="span12">
+              <% if @previous_attachments.present? %>
+                <% @previous_attachments.each do |attachment|%>
+
+                    <div class="span4">
+                      <div class="big-page">
+                        <div class="page-content">
+                          <h2><%= attachment.file_name %></h2>
+                          <p>
+                            <%= attachment.file_note %>
+                          </p>
+                        </div>
+                        <i class="icon-file-text"></i>
+                      </div>
+                      <h3><%= attachment.file_name %></h3>
+                      <div class="prev-report-block">
+                        <%= link_to "<i class='icon-cloud-download'></i> Download Report".html_safe, users_download_report_path(:id => attachment.id),  { :class=>"action-btn-left main-doc-download" } %>
+                      </div>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>
+

@@ -53,11 +53,10 @@ class Admin::UsersController < ApplicationController
   end
 
   def view_reports
-    user = User.find_by_id(params[:user_id])
-    @attachments = user.attachments
-    # @latest_attachment = current_user.attachments.order('created_at desc').first
-    # @previous_attachments = current_user.attachments.order('created_at desc').drop(1)
-
+    @user = User.find_by_id(params[:user_id])
+    attachments = @user.attachments.order('created_at desc')
+    @latest_attachment = attachments.first
+    @previous_attachments = attachments.drop(1)
   end
 
   def download_report
