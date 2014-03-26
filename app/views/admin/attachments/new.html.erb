@@ -21,8 +21,8 @@
             <%= f.input_field :file_note, placeholder: "Report Descripton" %>
             <% end %>
 
-            <%= link_to "<i class='icon-cloud-upload'></i> Upload Report".html_safe, new_admin_user_path,  { :class=>"action-btn-left upload-report" } %>
-            <%#= f.file_field :avatar, :required => true, placeholder: "Avatar" %>
+            <%#= link_to "<i class='icon-cloud-upload'></i> Upload Report".html_safe, new_admin_user_path,  { :class=>"action-btn-left upload-report" } %>
+            <%= f.file_field :avatar, :required => true, placeholder: "Avatar" %>
           </div>
 
           <div class="form-actions">
