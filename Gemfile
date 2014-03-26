@@ -75,7 +75,7 @@ group :development do
   gem 'better_errors' #Only in Dev environment
 
   #Automating with Guard
-	gem 'guard'
+	# gem 'guard'
 	gem 'libnotify'
   gem 'rb-inotify', require: false
   gem 'guard-annotate'
