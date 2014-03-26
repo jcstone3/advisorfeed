@@ -18,14 +18,22 @@
 
             <%= f.input :file_note, :required => true, wrapper: :prepend, :autofocus => true, placeholder: "Report Descripton" do %>
               <span class="add-on"><i class="icon-file-text"></i></span>
-            <%= f.input_field :file_note, placeholder: "Report Descripton" %>
+            <%= f.input_field :file_note, placeholder: "Report Descripton", as: "text" %>
             <% end %>
 
-            <%#= link_to "<i class='icon-cloud-upload'></i> Upload Report".html_safe, new_admin_user_path,  { :class=>"action-btn-left upload-report" } %>
-            <%= f.file_field :avatar, :required => true, placeholder: "Avatar" %>
+           <div id="photo_attachment_container">
+            <div class="wrapper">
+              <%= f.file_field :avatar, :required => true, placeholder: "Avatar" %>
+            </div>
+            <button class ="action-btn-left upload-report"><i class='icon-folder-open'></i> Browse Report</button>
+          </div>
           </div>
 
           <div class="form-actions">
-            <%= f.button :submit, "Save report" %>
+            <%= f.button :submit, "Upload report" %>
           </div>
         <% end %>
+      </div>
+    </div>
+  </div>
+</div>

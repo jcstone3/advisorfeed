@@ -7,3 +7,8 @@ $ ->
 
 $ ->
   $('i').tooltip()
+
+$ ->
+  $(".reset").click ->
+    $('.reset').parents('simple_form').find("input[type=text], textarea").val("")
+    return
