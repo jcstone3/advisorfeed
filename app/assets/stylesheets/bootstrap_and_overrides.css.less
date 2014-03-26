@@ -689,7 +689,7 @@ p.desciption {
   margin-bottom: 10px;
 }
 
-.user_address, .user_description {
+.user_address, .user_description, .attachment_file_note {
   .input-prepend {
     .add-on {
       padding-top: 4px;
@@ -750,4 +750,40 @@ textarea {
   font-weight: 700;
   text-decoration: underline;
   font-size: 16px;
+}
+
+.attachments-new {
+  .form-inputs {
+    width: 400px;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 30px;
+    #photo_attachment_container {
+      position: relative;
+      .wrapper {
+        opacity: 0;
+        cursor: pointer;
+        position: absolute;
+        top: 0px;
+        z-index: 2;
+        left: 66px;
+      }
+      .upload-report {
+        position: absolute;
+        top: -15px;
+        left: 60px;
+        border: none !important;
+      }
+    }
+    #attachment_avatar {
+      cursor: pointer;
+    }
+  }
+  .form-actions {
+    margin-top: 80px;
+    .btn {
+      margin-top: 0;
+      padding: 10px 88px;
+    }
+  }
 }
