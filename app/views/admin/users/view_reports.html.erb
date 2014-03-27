@@ -4,7 +4,7 @@
       <div class="row-fluid">
         <div class="span12">
           <div class="span7">
-            <h2>Client: &nbsp;<%= @user.first_name %> &nbsp; <%= @user.last_name %></h2>
+            <h2 class="client-name">Client:<%= @user.first_name %> <%= @user.last_name %></h2>
           </div>
           <div class="span5">
             <%= link_to "<i class='icon-cloud-upload'></i> Upload Report".html_safe, new_admin_user_attachments_path(:user_id => @user.id),  { :class=>"action-btn-left" } %>
