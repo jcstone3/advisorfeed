@@ -21,7 +21,7 @@
               <p class="desciption">
                 <%= @latest_attachment.file_note %>
               </p>
-              <%= link_to "<i class='icon-cloud-download'></i> Download Report".html_safe, users_download_report_path(:id => @latest_attachment.id),  { :class=>"action-btn-left main-doc-download" } %>
+              <%= link_to "<i class='icon-cloud-download'></i> <span>Download Report</span>".html_safe, users_download_report_path(:id => @latest_attachment.id),  { :class=>"action-btn-left main-doc-download" } %>
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@
                       </div>
                       <h3><%= attachment.file_name %></h3>
                       <div class="prev-report-block">
-                        <%= link_to "<i class='icon-cloud-download'></i> Download Report".html_safe, users_download_report_path(:id => attachment.id),  { :class=>"action-btn-left main-doc-download" } %>
+                        <%= link_to "<i class='icon-cloud-download'></i> <span>Download Report</span>".html_safe, users_download_report_path(:id => attachment.id),  { :class=>"action-btn-left main-doc-download" } %>
                       </div>
                     </div>
                   <% end %>
