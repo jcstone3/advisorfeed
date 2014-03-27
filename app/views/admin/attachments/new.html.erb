@@ -1,8 +1,8 @@
-<div class="sign-in-form">
+<div class="sign-in-form client-add-edit">
   <div class="row-fluid">
     <div class="span8 offset2 centered">
-      <h1>Upload a new report</h1>
-      <%= @reports.count %>
+      <h1>Upload Report For: <%= @user.first_name %> <%= @user.last_name %></h1>
+      <h3>Please select a file and click the upload button</h3>
     </div>
   </div>
 
@@ -26,12 +26,12 @@
             <div class="wrapper">
               <%= f.file_field :avatar, :required => true, placeholder: "Avatar" %>
             </div>
-            <button class ="action-btn-left upload-report"><i class='icon-folder-open'></i> Browse Report</button>
+            <button class ="action-btn-left upload-report"><i class='icon-folder-open'></i> Choose File</button>
           </div>
           </div>
 
           <div class="form-actions">
-            <%= f.button :submit, "Upload report" %>
+            <%= f.button :submit, "Upload Report" %>
             <%= link_to 'Cancel', admin_users_path, :class => "secondary-links" %>
           </div>
         <% end %>
