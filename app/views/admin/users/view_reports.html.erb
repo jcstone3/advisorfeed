@@ -58,21 +58,27 @@
       <div class="row-fluid prev-reports">
         <div class="span12">
           <% if @previous_attachments.present? %>
-            <% @previous_attachments.each do |attachment|%>
-
-              <div class="span4">
-                <div class="big-page">
-                  <div class="page-content">
-                    <h2><%= attachment.file_name %></h2>
-                    <p>
-                      <%= attachment.file_note %>
-                    </p>
-                  </div>
-                  <i class="icon-file-text"></i>
+            <% @previous_attachments.in_groups_of(3).each do |attachment_group| %>
+              <div class="row-fluid attachment-row">
+                <div class="span12">
+                  <% attachment_group.each do |attachment|%>
+                    <% break if attachment.nil? %>
+                    <div class="span4">
+                      <div class="big-page">
+                        <div class="page-content">
+                          <h2><%= attachment.file_name %></h2>
+                          <p>
+                            <%= attachment.file_note %>
+                          </p>
+                        </div>
+                        <i class="icon-file-text"></i>
+                      </div>
+                      <h3><%= attachment.file_name %></h3>
+                      <%= link_to "<i class='icon-cloud-download'></i> Download".html_safe, admin_user_download_report_path(:id => attachment.id), class: "action-btn-left main-doc-download" %>
+                      <%= link_to "<i class='icon-trash'></i> Delete".html_safe, admin_user_destroy_report_path(:id => attachment.id), :confirm => 'Are you sure?', class: "action-btn-left main-doc-download main-doc-delete" %>
+                    </div>
+                  <% end %>
                 </div>
-                <h3><%= attachment.file_name %></h3>
-                <%= link_to "<i class='icon-cloud-download'></i> Download".html_safe, admin_user_download_report_path(:id => attachment.id), class: "action-btn-left main-doc-download" %>
-                <%= link_to "<i class='icon-trash'></i> Delete".html_safe, admin_user_destroy_report_path(:id => attachment.id), :confirm => 'Are you sure?', class: "action-btn-left main-doc-download main-doc-delete" %>
               </div>
             <% end %>
           <% end %>
