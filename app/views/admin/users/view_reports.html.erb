@@ -4,10 +4,10 @@
       <div class="row-fluid">
         <div class="span12">
           <div class="span7">
-            <h2>Client: &nbsp;<%= @user.first_name %> &nbsp; <%= @user.last_name %></h2>
+            <h2 class="client-name"><%= link_to '<i class="icon-angle-left"></i>'.html_safe, admin_users_path, :class => "bread-left" %>Client:<%= @user.first_name %> <%= @user.last_name %></h2>
           </div>
           <div class="span5">
-            <%= link_to "<i class='icon-cloud-upload'></i> Upload Report".html_safe, new_admin_user_attachments_path(:user_id => @user.id),  { :class=>"action-btn-left" } %>
+            <%= link_to "<i class='icon-cloud-upload'></i> <span>Upload Report</span>".html_safe, new_admin_user_attachments_path(:user_id => @user.id),  { :class=>"action-btn-left" } %>
           </div>
         </div>
       </div>
@@ -38,8 +38,8 @@
                 <%= @latest_attachment.file_note %>
               </p>
               <h5 class="main-doc-upload-date"><%= @latest_attachment.created_at.strftime("%d %b %Y") %></h5>
-              <%= link_to "<i class='icon-cloud-download'></i> Download".html_safe, admin_user_download_report_path(:id => @latest_attachment.id), class: "action-btn-left main-doc-download latest-btn-down" %>
-              <%= link_to "<i class='icon-trash'></i> Delete".html_safe, admin_user_destroy_report_path(:id => @latest_attachment.id), :confirm => 'Are you sure?', class: "action-btn-left main-doc-download main-doc-delete latest-btn-del" %>
+              <%= link_to "<i class='icon-cloud-download'></i> <span>Download</span>".html_safe, admin_user_download_report_path(:id => @latest_attachment.id), class: "action-btn-left main-doc-download latest-btn-down" %>
+              <%= link_to "<i class='icon-trash'></i> <span>Delete</span>".html_safe, admin_user_destroy_report_path(:id => @latest_attachment.id), :confirm => 'Are you sure?', class: "action-btn-left main-doc-download main-doc-delete latest-btn-del" %>
             </div>
           <% else %>
             <h2>No reports to show!</h2>
@@ -74,8 +74,8 @@
                         <i class="icon-file-text"></i>
                       </div>
                       <h3><%= attachment.file_name %></h3>
-                      <%= link_to "<i class='icon-cloud-download'></i> Download".html_safe, admin_user_download_report_path(:id => attachment.id), class: "action-btn-left main-doc-download" %>
-                      <%= link_to "<i class='icon-trash'></i> Delete".html_safe, admin_user_destroy_report_path(:id => attachment.id), :confirm => 'Are you sure?', class: "action-btn-left main-doc-download main-doc-delete" %>
+                      <%= link_to "<i class='icon-cloud-download'></i> <span>Download</span>".html_safe, admin_user_download_report_path(:id => attachment.id), class: "action-btn-left main-doc-download" %>
+                      <%= link_to "<i class='icon-trash'></i> <span>Delete</span>".html_safe, admin_user_destroy_report_path(:id => attachment.id), :confirm => 'Are you sure?', class: "action-btn-left main-doc-download main-doc-delete" %>
                     </div>
                   <% end %>
                 </div>
@@ -86,8 +86,4 @@
       </div>
     </div>
   </div>
-</div>
-
-<div class="form-actions">
-  <%= link_to 'Back', admin_users_path, :class => "secondary-links" %>
 </div>

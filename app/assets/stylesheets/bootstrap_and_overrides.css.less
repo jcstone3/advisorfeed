@@ -123,8 +123,8 @@ h3 {
 .breadbar {
   margin-bottom: 30px;
   padding: 0;
-  width: 60%;
-  margin-left: 20%;
+  width: 785px;
+  margin: 0 auto;
 }
 .navbar-inner {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
@@ -178,11 +178,17 @@ h3 {
     }
     .icon-cog {
       cursor: pointer;
-      font-size: 15px;
+      font-size: 20px;
       padding-left: 15px;
+      padding-right: 10px;
+      position: relative;
+      top: 3px;
     }
     .icon-signout {
       color: #F07957;
+      font-size: 20px;
+      position: relative;
+      top: 3px;
     }
   }
 }
@@ -430,9 +436,10 @@ button.btn, input[type="submit"].btn {
 /* Table */
 /***********************************************************************************************/
 .client-table {
-  box-shadow: 0 1px 10px rgba(0,0,0,.1);
-  width: 60%;
-  margin-left: 20%;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  width: 785px;
+  margin: 0 auto;
+  margin-top: 30px;
   tr {
     background: white;
   }
@@ -480,9 +487,8 @@ button.btn, input[type="submit"].btn {
 }
 
 .pagination-container {
-  width: 60%;
-  margin-left: 20%;
-  padding-left: 0;
+  width: 785px;
+  margin: 0 auto;
   .pagination {
     float: right;
   }
@@ -608,7 +614,7 @@ p.desciption {
   margin-top: 70px;
   margin-bottom: 40px;
   h2 {
-    font-weight: 900;
+    font-weight: 700;
     font-size: 32px;
     margin-bottom: 0;
   }
@@ -680,6 +686,16 @@ p.desciption {
   .span5 {
     .action-btn-left {
       background: #2980b9;
+      i {
+        font-size: 22px;
+      }
+      span {
+        font-size: 13px;
+        font-weight: 900;
+        text-transform: uppercase;
+        position: relative;
+        top: -2px;
+      }
     }
   }
 }
@@ -798,5 +814,23 @@ textarea {
   .main-container {
     width: 960px;
     margin: 0 auto;
+  }
+}
+.client-name {
+  font-weight: 900;
+}
+.bread-left {
+  margin-right: 10px;
+  font-size: 35px;
+  color: #333333 !important;
+}
+
+.users-edit_password {
+  .client-add-edit .form-actions {
+    width: 282px;
+    margin: 0 auto;
+  }
+  .client-add-edit h1, .client-add-edit h3 {
+    text-align: center;
   }
 }
