@@ -29,6 +29,22 @@ class Admin::UsersController < ApplicationController
     @user = User.find_by_id(params[:id])
   end
 
+  def edit_password
+    @user = User.find_by_id(params[:user_id])
+  end
+
+  def update_password
+    @user = User.find_by_id(params[:user_id])
+    respond_to do |format|
+      if @user.update(user_params)
+        format.html { redirect_to admin_users_path, notice: "Successfully updated #{@user.first_name}#{' '}#{@user.last_name} password." }
+      else
+        Rails.logger.debug @user.errors.inspect
+        format.html { render action: 'edit_password' }
+      end
+    end
+  end
+
   def update
     @user = User.find_by_id(params[:id])
     respond_to do |format|

@@ -15,6 +15,8 @@ AdvisorFeed::Application.routes.draw do
       get '/download_report' => "users#download_report", :as => "download_report"
       get '/destroy_report' => "users#destroy_report", :as => "destroy_report"
       get '/view_reports' => "users#view_reports", :as => "view_reports"
+      get '/edit_password' => "users#edit_password", :as => "edit_password"
+      put '/update_password' => "users#update_password", :as => "update_password"
       resource :attachments
     end
   end
