@@ -758,6 +758,10 @@ textarea {
 }
 
 .client-add-edit {
+  .prev-reports-header {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
   h1,h3 {
     text-align: center;
     color: #333333;
@@ -803,6 +807,9 @@ textarea {
 }
 
 .attachments-new {
+  .main-container {
+    padding: 0;
+  }
   .form-inputs {
     width: 400px;
     margin: 0 auto;
@@ -842,6 +849,16 @@ textarea {
       margin-top: 9px;
     }
   }
+  .prev-reports-header, .table-row {
+    background: #E9E9E9;
+  }
+  .prev-reports-header {
+    margin-top: 50px;
+    h2 {
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+  }
 }
 .users-view_reports, .dashboards-index {
   .main-container {
@@ -877,5 +894,27 @@ textarea {
   h2 {
     color: #CDCDCD;
     font-size: 24px;
+  }
+}
+
+.reports-table {
+  margin-bottom: 90px;
+  width: 100%;
+  thead {
+    th {
+      .report-upld-date-title {
+        margin-left: 146px;
+      }
+    }
+  }
+  tbody tr td:nth-child(1) {
+    min-width: 200px;
+  }
+  .report-desc {
+    width: 300px;
+    display: inline-block;
+  }
+  .report-upld-date {
+    margin-right: 100px;
   }
 }
