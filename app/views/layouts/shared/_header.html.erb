@@ -9,7 +9,14 @@
           <span class='icon-bar'></span>
         </a> -->
           <%#= link_to image_tag('logo.png'), new_admin_session_path, title: 'Advisor Feed', alt: 'Advisor Feed', class: 'brand'-%>
-          <h1 class="logo">Advisor<em>Feed</em></h1>
+          <% if user_signed_in? %>
+           <%= link_to "<h1 class='logo'>Advisor<em>Feed</em></h1>".html_safe, new_user_session_path %>
+          <% elsif admin_signed_in? %>
+           <%= link_to "<h1 class='logo'>Advisor<em>Feed</em></h1>".html_safe, new_admin_session_path %>
+          <% else %>
+           <%= link_to "<h1 class='logo'>Advisor<em>Feed</em></h1>".html_safe, new_user_session_path %>
+          <% end %>
+
           <% if admin_signed_in? %>
             <div class='container-fluid'>
               <ul class='nav pull-right home-header'>
@@ -19,7 +26,7 @@
                   <!-- <h5>Admin Account</h5> -->
                 </div>
                 <i class="icon-cog"></i>
-                <%= link_to "<i class='icon-signout'></i>".html_safe, destroy_admin_session_path, method: :delete %>
+                <%= link_to "<i class='icon-signout'></i>".html_safe, destroy_user_session_path, method: :delete %>
               </ul>
             </div><!--/.nav-collapse -->
           <% else %>
@@ -27,7 +34,7 @@
               <div class='container-fluid'>
                 <ul class='nav pull-right home-header'>
                   <div class="welcome">
-                    <h5>Welcome, <em><%= current_user.first_name %>&nbsp;<%= current_user.last_name %></em></h5>
+                    <h5>Welcome, <em><%= current_user.first_name %><%= current_user.last_name %></em></h5>
                     <!-- <h5>User Account</h5> -->
                   </div>
                   <i class="icon-cog"></i>
