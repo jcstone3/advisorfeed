@@ -70,7 +70,7 @@
                   <td width="580">
                     <p align="left" style="font-size: 24px;line-height: 32px; color: #41464A; font-weight:bold; margin-top:0px; margin-bottom:18px;">
 
-                      <singleline>Hey Phil Norton,</singleline>
+                      <singleline>Hey <%= @resource.first_name %><%= @resource.last_name %>,</singleline>
                     </p>
                     <em style="color: #8C8A8B;
 font-style: normal;
@@ -129,7 +129,7 @@ border: 1px solid #D95831;
 box-shadow: inset 0 22px 0px -21px #f59b81;">
 
 
-<%= link_to 'Accept Invitation', accept_invitation_url(@resource, :invitation_token => @token),{:style=>'color: #fff; text-decoration: none;'} %></td>
+<%= link_to 'Accept Invitation', accept_invitation_url(@resource, :invitation_token => @token), {:style=>'color: #fff; text-decoration: none;'} %></td>
                                 </tr>
                               </table></singleline></p>
                             </td>
