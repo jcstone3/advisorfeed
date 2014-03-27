@@ -28,17 +28,20 @@
       <% end %>
       <!-- latest report end -->
 
-          <div class="row-fluid prev-reports-header">
-            <div class="span12">
-              <h2>Previous Reports</h2>
-            </div>
-          </div>
+      <div class="row-fluid prev-reports-header">
+        <div class="span12">
+          <h2>Previous Reports</h2>
+        </div>
+      </div>
 
-          <div class="row-fluid prev-reports">
-            <div class="span12">
-              <% if @previous_attachments.present? %>
-                <% @previous_attachments.each do |attachment|%>
-
+      <div class="row-fluid prev-reports">
+        <div class="span12">
+          <% if @previous_attachments.present? %>
+            <% @previous_attachments.in_groups_of(3).each do |attachment_group| %>
+              <div class="row-fluid attachment-row">
+                <div class="span12">
+                  <% attachment_group.each do |attachment|%>
+                    <% break if attachment.nil? %>
                     <div class="span4">
                       <div class="big-page">
                         <div class="page-content">
@@ -53,11 +56,14 @@
                       <div class="prev-report-block">
                         <%= link_to "<i class='icon-cloud-download'></i> Download Report".html_safe, users_download_report_path(:id => attachment.id),  { :class=>"action-btn-left main-doc-download" } %>
                       </div>
-                  </div>
-                <% end %>
-              <% end %>
-            </div>
-          </div>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
