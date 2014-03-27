@@ -2,6 +2,8 @@ class Admin::AttachmentsController < ApplicationController
 
   def new
     @attachment = Attachment.new
+    @user = User.find_by_id(params[:user_id])
+    @reports = @user.attachments.order('created_at desc')
   end
 
   def create
