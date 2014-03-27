@@ -21,13 +21,14 @@
               <span class="add-on"><i class="icon-lock"></i></span>
             <%= f.input_field :password, placeholder: "Password" %>
             <% end %>
-            <%= link_to "Forgot your password?", new_user_password_path %>
+
             <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
         </div>
 
         <%= f.button :submit, "Sign in" %>
         <% end %>
       </div>
+         <%= link_to "Forgot your password?", new_user_password_path %>
     </div>
   </div>
 </div>
