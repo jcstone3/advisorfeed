@@ -6,7 +6,7 @@ class Admin::UsersController < ApplicationController
     @user = User.new
   end
 
- def create
+  def create
     @user = User.new(user_params)
     generated_password = Devise.friendly_token.first(8)
     @user.password = generated_password
@@ -22,7 +22,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def index
-    @users = User.paginate(:page => params[:page], :per_page => 5)
+    @users = User.paginate(:page => params[:page], :per_page => 5).order(:last_name)
   end
 
   def edit
@@ -55,9 +55,6 @@ class Admin::UsersController < ApplicationController
         format.html { render action: 'edit' }
       end
     end
-  end
-
-  def show
   end
 
   def destroy
