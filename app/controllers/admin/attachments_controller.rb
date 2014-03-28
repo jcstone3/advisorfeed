@@ -8,11 +8,13 @@ class Admin::AttachmentsController < ApplicationController
 
   def create
     @attachment = Attachment.new(attachment_params)
+    @user = User.find_by_id(@attachment.user_id)
     respond_to do |format|
       if @attachment.save
-        user = User.find_by_id(@attachment.user_id)
-        format.html { redirect_to admin_user_view_reports_path(:user_id => user.id), notice: "Successfully uploaded #{user.first_name}#{' '}#{user.last_name} report." }
+        @reports = @user.attachments
+        format.html { redirect_to admin_user_view_reports_path(:user_id => @user.id), notice: "Successfully uploaded #{@user.first_name}#{' '}#{@user.last_name} report." }
       else
+        @reports = @user.attachments
         Rails.logger.debug @attachment.errors.inspect
         format.html { render action: 'new' }
       end

@@ -86,9 +86,10 @@ class Admin::UsersController < ApplicationController
   def destroy_report
     @attachment_record = Attachment.find(params[:id])
     @user = User.find_by_id(@attachment_record.user_id)
+    @deleted_attachment_file_name = @attachment_record.file_name
     @attachment_record.destroy
     respond_to do |format|
-      format.html { redirect_to admin_user_view_reports_path(:user_id => @attachment_record.user_id), notice: "Successfully deleted #{@user.first_name}#{' '}#{@user.last_name} report." }
+      format.html { redirect_to admin_user_view_reports_path(:user_id => @attachment_record.user_id), notice: "Successfully deleted #{@deleted_attachment_file_name}." }
     end
   end
 

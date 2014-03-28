@@ -39,7 +39,7 @@
               </p>
               <h5 class="main-doc-upload-date"><%= @latest_attachment.created_at.strftime("%d %b %Y") %></h5>
               <%= link_to "<i class='icon-cloud-download'></i> <span>Download</span>".html_safe, admin_user_download_report_path(:id => @latest_attachment.id), class: "action-btn-left main-doc-download latest-btn-down" %>
-              <%= link_to "<i class='icon-trash'></i> <span>Delete</span>".html_safe, admin_user_destroy_report_path(:id => @latest_attachment.id), :confirm => 'Are you sure?', class: "action-btn-left main-doc-download main-doc-delete latest-btn-del" %>
+              <%= link_to "<i class='icon-trash'></i> <span>Delete</span>".html_safe, admin_user_destroy_report_path(:id => @latest_attachment.id), :confirm => "Are you sure? you want to delete #{@latest_attachment.file_name}", class: "action-btn-left main-doc-download main-doc-delete latest-btn-del" %>
             </div>
           <% else %>
             <div class="no-reports">
@@ -77,7 +77,7 @@
                       </div>
                       <h3><%= attachment.file_name %></h3>
                       <%= link_to "<i class='icon-cloud-download'></i> <span>Download</span>".html_safe, admin_user_download_report_path(:id => attachment.id), class: "action-btn-left main-doc-download" %>
-                      <%= link_to "<i class='icon-trash'></i> <span>Delete</span>".html_safe, admin_user_destroy_report_path(:id => attachment.id), :confirm => 'Are you sure?', class: "action-btn-left main-doc-download main-doc-delete" %>
+                      <%= link_to "<i class='icon-trash'></i> <span>Delete</span>".html_safe, admin_user_destroy_report_path(:id => attachment.id), :confirm => "Are you sure? you want to delete #{attachment.file_name}.", class: "action-btn-left main-doc-download main-doc-delete" %>
                     </div>
                   <% end %>
                 </div>
