@@ -115,7 +115,7 @@ h3 {
 }
 
 // Dark backgrounds
-.reports-index, .users-index, .users-edit, .users-new, .users-edit_password, .attachments-new, .users-create {
+.reports-index, .users-index, .users-edit, .users-new, .users-edit_password, .attachments-new, .users-create, .attachments-create {
   background: #F0F0F0;
 }
 
@@ -811,7 +811,7 @@ textarea {
   font-size: 16px;
 }
 
-.attachments-new {
+.attachments-new,.attachments-create {
   .main-container {
     padding: 0;
   }
@@ -947,5 +947,14 @@ textarea {
   }
   .report-upld-date {
     margin-right: 100px;
+  }
+}
+
+.attachment_file_note {
+  &.error {
+    margin-bottom: 40px;
+    .input-prepend {
+      margin-bottom: 0;
+    }
   }
 }
