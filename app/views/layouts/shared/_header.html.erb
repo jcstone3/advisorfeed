@@ -37,7 +37,7 @@
                     <h5>Welcome, <em><%= current_user.first_name %><%= ' '%><%= current_user.last_name %></em></h5>
                     <!-- <h5>User Account</h5> -->
                   </div>
-                  <i class="icon-cog"></i>
+                  <!-- <i class="icon-cog"></i> -->
                   <%= link_to "<i class='icon-signout'></i>".html_safe, destroy_user_session_path, method: :delete %>
                 </ul>
               </div><!--/.nav-collapse -->
