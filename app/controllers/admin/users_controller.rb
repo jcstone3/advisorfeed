@@ -59,9 +59,10 @@ class Admin::UsersController < ApplicationController
 
   def destroy
     @user = User.find_by_id(params[:id])
+    @deleted_user = "#{@user.first_name}#{' '}#{@user.last_name}"
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to admin_users_path, notice: 'User was successfully deleted.' }
+      format.html { redirect_to admin_users_path, notice: "#{@deleted_user} was successfully deleted." }
     end
   end
 
