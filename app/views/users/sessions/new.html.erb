@@ -11,7 +11,7 @@
       <div class="auth-form">
         <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
         <%= f.error_notification %>
-        <%= bootstrap_flash %>
+        <%#= bootstrap_flash %>
         <div class="form-inputs">
             <%= f.input :email, required: true, required: true, wrapper: :prepend, error: true do %>
               <span class="add-on"><i class="icon-envelope"></i></span>
