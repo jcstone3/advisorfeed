@@ -38,7 +38,7 @@
                   <% end %>
                 </div>
                 <div class="span6">
-                  <%= f.input :phone, :required => true, wrapper: :prepend, :autofocus => true   do %>
+                  <%= f.input :phone, wrapper: :prepend, :autofocus => true   do %>
                     <span class="add-on"><i class="icon-phone"></i></span>
                   <%= f.input_field :phone, placeholder: "Phone Number" %>
                   <% end %>
@@ -48,13 +48,13 @@
             <div class="row-fluid">
               <div class="span12">
                 <div class="span6 text-field">
-                  <%= f.input :website, :required => true, wrapper: :prepend, :autofocus => true, placeholder: "Website", class: "lol" do %>
+                  <%= f.input :website, wrapper: :prepend, :autofocus => true, placeholder: "Website" do %>
                     <span class="add-on"><i class="icon-globe"></i></span>
                   <%= f.input_field :website, placeholder: "Website"%>
                   <% end %>
                 </div>
                 <div class="span6 text-field">
-                  <%= f.input :company, :required => true, wrapper: :prepend, :autofocus => true   do %>
+                  <%= f.input :company, wrapper: :prepend, :autofocus => true   do %>
                     <span class="add-on"><i class="icon-building"></i></span>
                   <%= f.input_field :company, placeholder: "Company" %>
                   <% end %>
@@ -72,9 +72,6 @@
               </div>
             </div>
           </div>
-
-          </div>
-
           <div class="form-actions">
             <%= f.button :submit, "Update Client" %>
             <%= link_to 'Cancel', admin_users_path, :class => "secondary-links" %>
