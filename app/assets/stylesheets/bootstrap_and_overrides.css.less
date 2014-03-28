@@ -256,6 +256,7 @@ button.btn, input[type="submit"].btn {
   }
   h3 {
     padding-bottom: 1em;
+    color: #979797;
   }
 }
 
@@ -707,7 +708,7 @@ p.desciption {
 }
 .upload-report {
   float: none;
-  padding: 10px 92px;
+  padding: 10px 187px;
   i {
     font-size: 20px;
   }
@@ -767,6 +768,10 @@ textarea {
     color: #333333;
     // margin-left: 20px;
   }
+  h3 {
+    color: #979797;
+    font-size: 22px;
+  }
   h1 {
     font-size: 31.5px;
   }
@@ -811,10 +816,16 @@ textarea {
     padding: 0;
   }
   .form-inputs {
-    width: 400px;
+    width: 477px;
     margin: 0 auto;
     position: relative;
     // padding-top: 30px;
+    input.string {
+      width: 395px;
+    }
+    textarea {
+      width: 403px;
+    }
     #photo_attachment_container {
       position: relative;
       .wrapper {
@@ -828,19 +839,30 @@ textarea {
       .upload-report {
         position: absolute;
         top: -15px;
-        left: 60px;
+        left: 5px;
         border: none !important;
+      }
+      p {
+        position: absolute;
+        top: 45px;
+        text-align: left;
+        left: 5px;
+        font-weight: 300;
       }
     }
     #attachment_avatar {
       cursor: pointer;
+      width: 450px;
+      margin-left: -50px;
     }
   }
   .form-actions {
     margin-top: 80px;
     border: none;
     background: #F0F0F0;
-    width: 280px;
+    width: 469px;
+    padding-left: 0;
+    padding-right: 0;
     .btn {
       margin-top: 0;
       padding: 10px 15px;

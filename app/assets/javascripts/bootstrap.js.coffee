@@ -12,3 +12,9 @@ $ ->
   $(".reset").click ->
     $('.reset').parents('simple_form').find("input[type=text], textarea").val("")
     return
+
+
+  $("#attachment_avatar").change ->
+    console.log "Changed"
+    $('#photo_attachment_container').find('p').html $(this).val().split('\\').pop()
+    return
