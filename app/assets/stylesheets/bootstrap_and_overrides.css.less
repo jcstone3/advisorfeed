@@ -113,7 +113,9 @@ h3 {
     color: @theme-orange;
   }
 }
-.reports-index, .users-index {
+
+// Dark backgrounds
+.reports-index, .users-index, .users-edit, .users-new, .users-edit_password, .attachments-new, .users-create {
   background: #F0F0F0;
 }
 
@@ -158,6 +160,7 @@ h3 {
       display: inline-block;
       margin-left: 13px;
       margin-top: 8px;
+      margin-right: 15px;
       h5:nth-child(1) {
         margin-bottom: 0;
         font-size: 13px;
@@ -221,7 +224,7 @@ label {
   background: white;
   color: #BEC3C7;
   padding: 14px;
-  font-size: 19px;
+  font-size: 17px;
 }
 
 button.btn, input[type="submit"].btn {
@@ -230,10 +233,10 @@ button.btn, input[type="submit"].btn {
   text-shadow: none;
   font-weight: 700;
   padding: 10px 118px;
-  font-size: 12px;
+  font-size: 14px;
   font-family: lato;
   border: none;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   margin-top: 10px;
   border-radius: 4px;
 }
@@ -323,6 +326,8 @@ button.btn, input[type="submit"].btn {
   padding: 10px 0;
   border-radius: 0px;
   text-align: center;
+  width: 80%;
+  margin-left: 10%;
   i {
     position: relative;
     top: 3px;
@@ -334,7 +339,7 @@ button.btn, input[type="submit"].btn {
     position: relative;
   }
   .close {
-    display: none;
+    // display: none;
   }
 }
 
@@ -436,7 +441,8 @@ button.btn, input[type="submit"].btn {
 /* Table */
 /***********************************************************************************************/
 .client-table {
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  // box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.2), inset 0 0 0px rgba(0, 0, 0, 0.1);
   width: 785px;
   margin: 0 auto;
   margin-top: 30px;
@@ -701,7 +707,15 @@ p.desciption {
 }
 .upload-report {
   float: none;
-  padding: 10px 82px;
+  padding: 10px 92px;
+  i {
+    font-size: 20px;
+  }
+  span {
+    position: relative;
+    top: -2px;
+    padding-left: 0px;
+  }
 }
 
 
@@ -719,11 +733,20 @@ p.desciption {
     }
   }
 }
+.user_address {
+  .input-prepend {
+    margin-left: 6px;
+    textarea {
+      width: 527px;
+    }
+  }
+}
 textarea {
+  padding-left: 14px;
   height: 100px;
   outline: none;
   resize: none;
-  width: 220px;
+  width: 214px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   box-shadow: none !important;
@@ -735,29 +758,37 @@ textarea {
 }
 
 .client-add-edit {
-  h1,h3 {
-    text-align: left;
-    margin-left: 20px;
-  }
-  .user_email {
-    .input-prepend {
-      margin-left: 3px;
-      .string {
-        width: 75%;
-      }
-    }
-  }
-  .user_phone {
-    .input-prepend {
-      .string {
-        width: 64%;
-      }
-    }
-  }
-  .form-actions {
-    background: white;
-    border-top: none;
+  .prev-reports-header {
     margin-top: 0;
+    margin-bottom: 0;
+  }
+  h1,h3 {
+    text-align: center;
+    color: #333333;
+    // margin-left: 20px;
+  }
+  h1 {
+    font-size: 31.5px;
+  }
+  // .user_email {
+  //   .input-prepend {
+  //     margin-left: 3px;
+  //     .string {
+  //       width: 75%;
+  //     }
+  //   }
+  // }
+  // .user_phone {
+  //   .input-prepend {
+  //     .string {
+  //       width: 64%;
+  //     }
+  //   }
+  // }
+  .form-actions {
+    background:  #F0F0F0;
+    border-top: none;
+    margin: 0 auto;
     width: 588px;
     .btn {
       padding: 10px 15px;
@@ -776,11 +807,14 @@ textarea {
 }
 
 .attachments-new {
+  .main-container {
+    padding: 0;
+  }
   .form-inputs {
     width: 400px;
     margin: 0 auto;
     position: relative;
-    padding-top: 30px;
+    // padding-top: 30px;
     #photo_attachment_container {
       position: relative;
       .wrapper {
@@ -804,9 +838,25 @@ textarea {
   }
   .form-actions {
     margin-top: 80px;
+    border: none;
+    background: #F0F0F0;
+    width: 280px;
     .btn {
       margin-top: 0;
-      padding: 10px 88px;
+      padding: 10px 15px;
+    }
+    a {
+      margin-top: 9px;
+    }
+  }
+  .prev-reports-header, .table-row {
+    background: #E9E9E9;
+  }
+  .prev-reports-header {
+    margin-top: 50px;
+    h2 {
+      margin-top: 40px;
+      margin-bottom: 20px;
     }
   }
 }
@@ -817,7 +867,9 @@ textarea {
   }
 }
 .client-name {
-  font-weight: 900;
+  font-weight: 700;
+  font-size: 31.5px;
+  white-space: nowrap;
 }
 .bread-left {
   margin-right: 10px;
@@ -832,5 +884,37 @@ textarea {
   }
   .client-add-edit h1, .client-add-edit h3 {
     text-align: center;
+  }
+}
+
+.no-reports {
+  text-align: center;
+  padding: 15px;
+  border: 2px dashed rgba(0,0,0,0.1);
+  h2 {
+    color: #CDCDCD;
+    font-size: 24px;
+  }
+}
+
+.reports-table {
+  margin-bottom: 90px;
+  width: 100%;
+  thead {
+    th {
+      .report-upld-date-title {
+        margin-left: 146px;
+      }
+    }
+  }
+  tbody tr td:nth-child(1) {
+    min-width: 200px;
+  }
+  .report-desc {
+    width: 300px;
+    display: inline-block;
+  }
+  .report-upld-date {
+    margin-right: 100px;
   }
 }
