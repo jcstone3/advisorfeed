@@ -41,34 +41,42 @@
   <div class="row-fluid prev-reports-header">
     <div class="span8 offset2">
       <h2>Previous Reports</h2>
-    </div>
-  </div>
-  <div class="row-fluid table-row">
-    <div class="span8 offset2">
-      <table class="table client-table reports-table table-striped">
-          <thead>
-            <tr>
-              <th>Report Name</th>
-              <th><span>Report Description</span>
-              <span class="report-upld-date-title">Report Upload Date</span></th>
-            </tr>
-          </thead>
-          <tbody class="table-items">
-            <% @reports.each do |report|%>
-              <tr>
-                <td><%= report.file_name %></td>
-                <td>
-                  <div class="icons">
-                    <span class="report-desc"><%= report.file_note %></span>
-                    <span class="report-upld-date"><%= report.created_at.strftime("%d %b %Y") %></span>
 
-                    <%= link_to "<i class='icon-cloud-download'></i> Download Report".html_safe, admin_user_download_report_path(:id => report.id), class: "action-upload" %>
-                  </div>
-                </td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
+      <% if !@reports.present? %>
+        <div class="no-reports">
+          <h2>No reports uploaded</h2>
+        </div>
+      <% end %>
     </div>
   </div>
+  <% if @reports.present? %>
+    <div class="row-fluid table-row">
+      <div class="span8 offset2">
+        <table class="table client-table reports-table table-striped">
+            <thead>
+              <tr>
+                <th>Report Name</th>
+                <th><span>Report Description</span>
+                <span class="report-upld-date-title">Report Upload Date</span></th>
+              </tr>
+            </thead>
+            <tbody class="table-items">
+              <% @reports.each do |report|%>
+                <tr>
+                  <td><%= report.file_name %></td>
+                  <td>
+                    <div class="icons">
+                      <span class="report-desc"><%= report.file_note %></span>
+                      <span class="report-upld-date"><%= report.created_at.strftime("%d %b %Y") %></span>
+
+                      <%= link_to "<i class='icon-cloud-download'></i> Download Report".html_safe, admin_user_download_report_path(:id => report.id), class: "action-upload" %>
+                    </div>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  <% end %>
 </div>
