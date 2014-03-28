@@ -11,9 +11,9 @@
       <div class="auth-form">
         <%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }, :class=>'forgot_password') do |f| %>
           <div class="form-inputs" style="width: 600px;margin: 0 auto;">
-            <%= f.input :email, required: true, required: true, wrapper: :prepend, error: false do %>
+            <%= f.input :email, required: true, required: true, wrapper: :prepend do %>
               <span class="add-on"><i class="icon-envelope"></i></span>
-              <%= f.input_field :email, placeholder: "Email" %>
+              <%= f.input_field :email, placeholder: "Email", required: true %>
             <% end %>
 
             <div><%= f.submit "Send me reset password instructions", :class => "btn forgot" %></div>
