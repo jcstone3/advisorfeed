@@ -12,4 +12,8 @@ Admin.delete_all
 @admin.email = "admin@advisorfeed.com"
 @admin.password = "advisor@123"
 @admin.password_confirmation = "advisor@123"
+@admin.first_name = "John"
+@admin.last_name = "Stone"
 @admin.save
+
+puts "Admin successfully created!"
