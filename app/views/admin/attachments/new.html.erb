@@ -65,10 +65,10 @@
             <tbody class="table-items">
               <% @reports.each do |report|%>
                 <tr>
-                  <td><%= report.file_name %></td>
+                  <td><%= report.file_name.truncate(20) %></td>
                   <td>
                     <div class="icons">
-                      <span class="report-desc"><%= report.file_note %></span>
+                      <span class="report-desc"><%= report.file_note.truncate(40) %></span>
                       <span class="report-upld-date"><%= report.created_at.strftime("%d %b %Y") %></span>
 
                       <%= link_to "<i class='icon-cloud-download'></i> Download Report".html_safe, admin_user_download_report_path(:id => report.id), class: "action-upload" %>
