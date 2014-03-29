@@ -15,8 +15,13 @@ $ ->
     $('.reset').parents('simple_form').find("input[type=text], textarea").val("")
     return
 
+  String::trunc = String::trunc or (n) ->
+    (if @length > n then @substr(0, n - 1) + "..." else this)
+
+
 # Display file names on file selection
   $("#attachment_avatar").change ->
-    console.log "Changed"
-    $('#photo_attachment_container').find('p').html $(this).val().split('\\').pop()
+    txt = $(this).val().split('\\').pop()
+    txt = txt.trunc 45
+    $('#photo_attachment_container').find('p').html txt
     return
