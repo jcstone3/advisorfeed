@@ -1,13 +1,14 @@
 <div class="sign-in-form">
   <div class="row-fluid">
     <div class="span8 offset2 centered">
-      <h3>Please change your password to get secure access</h3>
+      <h1>You Are Almost There</h1>
+      <h3>Please set a password to get secure access</h3>
     </div>
   </div>
 
   <div class="row-fluid">
     <div class="centered">
-      <div class="auth-form">
+      <div class="auth-form" style="width: 283px;margin: 0 auto;">
         <%= simple_form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => { :method => :put } do |f| %>
           <%#= devise_error_messages! %>
           <%= f.hidden_field :invitation_token %>
@@ -21,7 +22,7 @@
             <%= f.input_field :password_confirmation, placeholder: "Password Confirmation" %>
             <% end %>
 
-          <%= f.submit t("devise.invitations.edit.submit_button"), :class => 'btn small' %>
+          <%= f.submit "Set My Password", :class => 'btn small' %>
         <% end %>
       </div>
     </div>
