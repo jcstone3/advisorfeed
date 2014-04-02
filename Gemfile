@@ -128,6 +128,11 @@ gem 'rails_12factor', group: :production
 
 # Use Capistrano for deployment
 gem 'capistrano', group: :development
+#gem 'net-ssh', '~> 2.8.1', :git => "https://github.com/net-ssh/net-ssh", group: :development
+
+# gem 'capistrano-ext'
+# gem 'capistrano-multistage'
+# gem 'rvm-capistrano'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]

@@ -51,14 +51,14 @@ set :path, "/home/icicle/sites/advisorfeed"
 
 # Location  for deployment i.e server name
 
-role :web, "localhost"      # Your HTTP server, Apache/etc
+role :web, "localhost", :no_release => true      # Your HTTP server, Apache/etc
 role :app, "localhost"      # This may be the same as your `Web` server
-role :db, "localhost"       # This is where Rails migrations will run
+role :db, "localhost", :primary => true       # This is where Rails migrations will run
 
 #server location, :app, :web, :primary => true
 set :deploy_to, "/home/icicle/sites/advisorfeed"
 set :rails_env, "staging"
 
-set :user_sudo, true
-set :user, "ubuntu"
-set :admin_runner, "ubuntu"
+# set :user_sudo, true
+set :user, "icicle"
+set :admin_runner, "icicle"
