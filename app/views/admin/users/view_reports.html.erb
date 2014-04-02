@@ -7,7 +7,7 @@
             <h2 class="client-name"><%= link_to "<i class='icon-angle-left'></i> Client: #{@user.first_name}#{' '}#{@user.last_name}".html_safe, admin_users_path, :class => "bread-left" %></h2>
           </div>
           <div class="span5">
-            <%= link_to "<i class='icon-cloud-upload'></i> <span>Upload Report</span>".html_safe, new_admin_user_attachments_path(:user_id => @user.id),  { :class=>"action-btn-left" } %>
+            <%= link_to "<i class='icon-cloud-upload'></i> <span>Upload New Report</span>".html_safe, new_admin_user_attachments_path(:user_id => @user.id),  { :class=>"action-btn-left" } %>
           </div>
         </div>
       </div>

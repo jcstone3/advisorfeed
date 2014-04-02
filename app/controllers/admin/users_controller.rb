@@ -75,7 +75,7 @@ class Admin::UsersController < ApplicationController
 
   def download_report
     attachment_record = Attachment.find(params[:id])
-    data = open(attachment_record.avatar.url)
+    data = open(attachment_record.avatar.expiring_url)
     send_data data.read, filename: attachment_record.avatar_file_name,
                          type: attachment_record.avatar_content_type,
                          disposition: 'attachment',

@@ -3,7 +3,7 @@ jQuery ->
   $("a[rel~=tooltip], .has-tooltip").tooltip()
 
 $ ->
-  $(".alert").show().delay(1000).fadeOut()
+  $(".alert").show().delay(2000).fadeOut()
 
 # Enable tooltip for icons
 $ ->
