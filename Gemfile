@@ -129,6 +129,7 @@ gem 'rails_12factor', group: :production
 # Use Capistrano for deployment
 gem 'capistrano', '2.15.5', group: :development
 gem 'net-ssh', '2.7.0', group: :development
+gem 'rvm-capistrano', group: :development
 # gem 'capistrano-ext'
 # gem 'capistrano-multistage'
 # gem 'rvm-capistrano'

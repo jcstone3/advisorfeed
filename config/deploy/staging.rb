@@ -55,10 +55,10 @@ role :web, "localhost"      # Your HTTP server, Apache/etc
 role :app, "localhost"      # This may be the same as your `Web` server
 role :db, "localhost"       # This is where Rails migrations will run
 
-#server location, :app, :web, :primary => true
+# server "localhost", :app, :web, :primary => true
 set :deploy_to, "/home/icicle/sites/advisorfeed"
 set :rails_env, "staging"
 
-set :user_sudo, true
+set :user_sudo, false
 set :user, "icicle"
 set :admin_runner, "icicle"

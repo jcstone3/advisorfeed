@@ -307,6 +307,8 @@ GEM
       sexp_processor (~> 4.0)
     ruby_parser (3.4.1)
       sexp_processor (~> 4.1)
+    rvm-capistrano (1.5.1)
+      capistrano (~> 2.15.4)
     sass (3.3.3)
     sdoc (0.4.0)
       json (~> 1.8)
@@ -427,6 +429,7 @@ DEPENDENCIES
   rb-inotify
   rspec-rails
   rubocop
+  rvm-capistrano
   sdoc
   shoulda-matchers
   simple_form
