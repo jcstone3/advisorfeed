@@ -9,7 +9,7 @@ class Attachment < ActiveRecord::Base
                       secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
                       bucket: ENV['S3_BUCKET_NAME']
                       },
-                    # s3_permissions: :private,
+                    s3_permissions: :private,
                     url: ENV['HOST'] ,
                     path: "users/:user_id/attachment/:id/:basename.:extension"
 

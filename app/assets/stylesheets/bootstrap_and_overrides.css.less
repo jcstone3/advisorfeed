@@ -96,6 +96,13 @@ h3 {
 .dashboards-index, .users-view_reports {
   background: #F7F7F7;
 }
+
+html,body {
+  height: 100%;
+}
+.main-container {
+  min-height: 100%;
+}
 /***********************************************************************************************/
 /* Color branding */
 /***********************************************************************************************/
@@ -327,6 +334,7 @@ button.btn, input[type="submit"].btn {
 /* Flash Notifications */
 /***********************************************************************************************/
 .alert {
+  display: none;
   padding: 10px 0;
   border-radius: 0px;
   text-align: center;
@@ -343,7 +351,7 @@ button.btn, input[type="submit"].btn {
     position: relative;
   }
   .close {
-    // display: none;
+    display: none;
   }
 }
 
@@ -369,8 +377,7 @@ button.btn, input[type="submit"].btn {
   padding: 15px 0;
   background: #111111;
   width: 100%;
-  position: fixed;
-  bottom: 0;
+  position: absolute;
   .copyright {
     margin-left: 42px;
     color: #f8f8f8;
@@ -913,7 +920,8 @@ textarea {
 .bread-left {
   margin-right: 10px;
   font-size: 30px;
-  color: #7f8c8d !important;
+  // color: #7f8c8d !important;
+  color: black;
 }
 
 .users-edit_password, .users-update_password {
