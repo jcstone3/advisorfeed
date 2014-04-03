@@ -54,8 +54,10 @@ table td {
 }
 
 a {
+  color: @client-vcmi-brandOrange;
   &:hover {
     text-decoration: none;
+    color: @client-vcmi-brandOrange;
   }
 }
 /***********************************************************************************************/
@@ -87,14 +89,28 @@ a {
 @theme-dark-grey: #58585a;
 @theme-orange: #F59E33;
 
+/***********************************************************************************************/
+/* Color branding */
+/***********************************************************************************************/
+
+@client-vcmi-background: #EEE6CF;
+@client-vcmi-footerColor: #9ea374;
+@client-vcmi-footerTextColor: #000000;
+@client-vcmi-brandGreen: #9EA374;
+@client-vcmi-brandDarkGreen: #524F27;
+@client-vcmi-brandOrange: #DE7A1C;
+@client-vcmi-brandBrown: #666666;
+@client-vcmi-linkColor: #de7a1c;
+
 body {
   margin-top: 90px;
+  background: @client-vcmi-background;
 }
 h3 {
   font-size: 22px;
 }
 .dashboards-index, .users-view_reports {
-  background: #F7F7F7;
+  background: @client-vcmi-background;
 }
 
 html,body {
@@ -103,11 +119,12 @@ html,body {
 .main-container {
   min-height: 100%;
 }
+
 /***********************************************************************************************/
-/* Color branding */
+/* Header */
 /***********************************************************************************************/
 .color-bar {
-  background: linear-gradient(to right, @theme-orange 0%, @theme-orange 33%,#BCBDC0 66%,@theme-dark-grey 100%);
+  background: linear-gradient(to right, @client-vcmi-brandOrange 0%, @client-vcmi-brandOrange 33%,@client-vcmi-brandGreen 66%,@client-vcmi-brandDarkGreen 100%);
   height: 3px;
 }
 
@@ -123,8 +140,11 @@ html,body {
 
 // Dark backgrounds
 .reports-index, .users-index, .users-edit, .users-new, .users-edit_password, .attachments-new, .users-create, .attachments-create, .users-update_password {
-  background: #F0F0F0;
+  background: @client-vcmi-background;
 }
+
+
+
 
 /***********************************************************************************************/
 /* Navbar */
@@ -140,23 +160,16 @@ html,body {
 }
 .navbar-inner {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
-  background: white;
+  background: @client-vcmi-background;
   border-radius: 0;
   border: none;
-  .logo {
-    margin-left: 20px;
-    color: #2c3e50;
-    font-size: 24px;
-    font-weight: 700;
-    float: left;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    em {
-      color: #7f8c8d;
-      text-transform: uppercase;
-      font-style: normal;
-      font-weight: 900;
-      font-size: 24px;
+  .client-logo {
+    img {
+      height: 40px;
+      float: left;
+      margin-top: 12px;
+      margin-bottom: 12px;
+      margin-left: 25px;
     }
   }
   .home-header {
@@ -173,6 +186,7 @@ html,body {
       margin-right: 15px;
       h5:nth-child(1) {
         margin-bottom: 0;
+        margin-top: 12px;
         font-size: 13px;
         font-weight: 700;
         color: #666969;
@@ -198,7 +212,7 @@ html,body {
       top: 3px;
     }
     .icon-signout {
-      color: #F07957;
+      color: @client-vcmi-brandOrange;
       font-size: 20px;
       position: relative;
       top: 3px;
@@ -238,7 +252,7 @@ label {
 }
 
 button.btn, input[type="submit"].btn {
-  background: #111111;
+  background: darken(@client-vcmi-brandOrange, 15%);
   color: white;
   text-shadow: none;
   font-weight: 700;
@@ -280,7 +294,7 @@ button.btn, input[type="submit"].btn {
 }
 .action-btn-left {
   padding: 10px 20px;
-  background: #E6614F;
+  background: darken(@client-vcmi-brandOrange, 15%);
   font-weight: 700;
   border-radius: 5px;
   float: right;
@@ -316,13 +330,13 @@ button.btn, input[type="submit"].btn {
   }
 }
 .action-report {
-  background: #9b59b6;
+  background: @client-vcmi-brandGreen;
 }
 .action-upload {
-  background: #2980b9;
+  background: darken(@client-vcmi-brandOrange, 15%);
 }
 .action-invite {
-  background: #34495e;
+  background: @client-vcmi-brandDarkGreen;
 }
 .icons {
   float: left;
@@ -375,12 +389,12 @@ button.btn, input[type="submit"].btn {
 /***********************************************************************************************/
 .footer {
   padding: 15px 0;
-  background: #111111;
+  background: @client-vcmi-footerColor;
   width: 100%;
   position: absolute;
   .copyright {
     margin-left: 42px;
-    color: #f8f8f8;
+    color: @client-vcmi-footerTextColor;
     font-size: 11px;
   }
 }
@@ -408,7 +422,7 @@ button.btn, input[type="submit"].btn {
       margin-top: 12px;
     }
     .icon-remove {
-      color: #F07957;
+      color: @client-vcmi-brandOrange;
       float: right;
       margin-right: 15px;
       font-size: 20px;
@@ -521,7 +535,7 @@ button.btn, input[type="submit"].btn {
     margin-top: -35px;
     h2 {
       color: #333333;
-      border-bottom: 5px solid #F07957;
+      border-bottom: 5px solid darken(@client-vcmi-brandOrange, 10%);
       font-size: 32px;
       padding-bottom: 10px;
       word-break: break-word;
@@ -687,7 +701,7 @@ p.desciption {
   .main-doc-delete {
     width: 47%;
     margin-left: 5px;
-    background: #F0988C;
+    background: lighten(@client-vcmi-brandOrange, 10%);
     float: right;
     .icon-trash {
       padding-right: 4px;
@@ -700,14 +714,14 @@ p.desciption {
   }
   .latest-btn-del {
     width: 39%;
-    margin-left: 10px;
+    margin-left: 14px;
     text-align: center;
   }
 }
 .users-view_reports {
   .span5 {
     .action-btn-left {
-      background: #2980b9;
+      background: darken(@client-vcmi-brandOrange, 10%);
       i {
         font-size: 22px;
       }
@@ -810,7 +824,7 @@ textarea {
   //   }
   // }
   .form-actions {
-    background:  #F0F0F0;
+    background: @client-vcmi-background;
     border-top: none;
     margin: 0 auto;
     width: 588px;
@@ -878,7 +892,7 @@ textarea {
   .form-actions {
     margin-top: 80px;
     border: none;
-    background: #F0F0F0;
+    background: @client-vcmi-background;
     width: 469px;
     padding-left: 0;
     padding-right: 0;
@@ -891,7 +905,7 @@ textarea {
     }
   }
   .prev-reports-header, .table-row {
-    background: #E9E9E9;
+    background: darken(@client-vcmi-background, 5%);
   }
   .prev-reports-header {
     margin-top: 50px;
@@ -923,7 +937,7 @@ textarea {
   margin-right: 10px;
   font-size: 30px;
   // color: #7f8c8d !important;
-  color: black;
+  color: black !important;
 }
 
 .users-edit_password, .users-update_password {

@@ -10,11 +10,11 @@
         </a> -->
           <%#= link_to image_tag('logo.png'), new_admin_session_path, title: 'Advisor Feed', alt: 'Advisor Feed', class: 'brand'-%>
           <% if user_signed_in? %>
-           <%= link_to "<h1 class='logo'>Advisor<em>Feed</em></h1>".html_safe, users_dashboard_path %>
+           <%= link_to image_tag('vcmi-logo.png').html_safe, users_dashboard_path, class: 'client-logo' %>
           <% elsif admin_signed_in? %>
-           <%= link_to "<h1 class='logo'>Advisor<em>Feed</em></h1>".html_safe, admin_users_path %>
+           <%= link_to image_tag('vcmi-logo.png').html_safe, admin_users_path, class: 'client-logo' %>
           <% else %>
-           <%= link_to "<h1 class='logo'>Advisor<em>Feed</em></h1>".html_safe, new_user_session_path %>
+           <%= link_to image_tag('vcmi-logo.png').html_safe, new_user_session_path, class: 'client-logo' %>
           <% end %>
 
           <% if admin_signed_in? %>
