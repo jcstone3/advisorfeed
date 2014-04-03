@@ -19,7 +19,7 @@
       <% if @latest_attachment.present? %>
         <div class="row-fluid">
           <div class="span12">
-            <div class="span5">
+            <div class="span6 offset3">
               <div class="big-page">
                 <div class="page-content">
                   <h2><%= @latest_attachment.file_name.truncate(40) %></h2>
@@ -29,12 +29,6 @@
                 </div>
                 <i class="icon-file-text"></i>
               </div>
-            </div>
-            <div class="span7">
-              <h2 class="main-doc-title"><%= @latest_attachment.file_name.truncate(40) %></h2>
-              <p class="desciption">
-                <%= @latest_attachment.file_note.truncate(150) %>
-              </p>
               <%= link_to "<i class='icon-cloud-download'></i> <span>Download Report</span>".html_safe, users_download_report_path(:id => @latest_attachment.id),  { :class=>"action-btn-left main-doc-download" } %>
             </div>
           </div>
