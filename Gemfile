@@ -127,9 +127,8 @@ gem 'rails_12factor', group: :production
 # gem 'unicorn'
 
 # Use Capistrano for deployment
-gem 'capistrano', group: :development
-#gem 'net-ssh', '~> 2.8.1', :git => "https://github.com/net-ssh/net-ssh", group: :development
-
+gem 'capistrano', '2.15.5', group: :development
+gem 'net-ssh', '2.7.0', group: :development
 # gem 'capistrano-ext'
 # gem 'capistrano-multistage'
 # gem 'rvm-capistrano'

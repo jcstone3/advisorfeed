@@ -37,3 +37,28 @@
 #     # password: 'please use keys'
 #   }
 # setting per server overrides global ssh_options
+
+######################################################################################################
+
+# Repository repository path
+set :repository,  "git@code.icicletech.com:ri/advisor-feed.git"
+
+# Numbers of  releases for save
+#set :keep_releases, 1
+
+# Path for application deployment
+set :path, "/home/icicle/sites/advisorfeed"
+
+# Location  for deployment i.e server name
+
+role :web, "localhost"      # Your HTTP server, Apache/etc
+role :app, "localhost"      # This may be the same as your `Web` server
+role :db, "localhost"       # This is where Rails migrations will run
+
+#server location, :app, :web, :primary => true
+set :deploy_to, "/home/icicle/sites/advisorfeed"
+set :rails_env, "production"
+
+set :user_sudo, true
+set :user, "icicle"
+set :admin_runner, "icicle"
