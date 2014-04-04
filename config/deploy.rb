@@ -21,23 +21,6 @@
 ######################################################################################################
 
 # set :application, "advisorfeed"
-# set :repository,  "git@code.icicletech.com:ri/advisor-feed.git"
-
-# set :path, "/home/icicle/sites/advisorfeed"
-
-# # Location  for deployment i.e server name
-
-# role :web, "localhost"      # Your HTTP server, Apache/etc
-# role :app, "localhost"      # This may be the same as your `Web` server
-# role :db, "localhost"       # This is where Rails migrations will run
-
-# # server "localhost", :app, :web, :primary => true
-# set :deploy_to, "/home/icicle/sites/advisorfeed"
-# set :rails_env, "staging"
-
-# set :user_sudo, false
-# set :user, "icicle"
-# set :admin_runner, "icicle"
 
 # # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
@@ -53,25 +36,23 @@
 # # Here we are setting the user info for deployment
 # ssh_options[:forward_agent] = true
 # default_run_options[:pty] = true
-# # require 'capistrano/ext/multistage'
 # require 'bundler/capistrano'
-# # require "rvm/capistrano"
+# # require 'capistrano/ext/multistage'
+# require "rvm/capistrano"
 # set :scm, :git
 
 # # this is needed for any server running RVM; tells it to use the project ruby and gem set
 # # tells RVM on the remote server which package we're using -- must match what is in the .rvmrc
-# set :rvm_type, :system
-# set :rvm_path, '/usr/local/rvm'
+# # set :rvm_type, :system
+# # set :rvm_path, '/usr/local/rvm'
 # set :rvm_ruby_string, 'ruby-2.1.0'
 
 # # To deploy upto particular tag
-# # set :branch do
-# #   default_tag = `git describe --abbrev=0 --tags`
-# #   tag = default_tag
-# #   tag
-# # end
-
-# set :branch, "ss_capistrano"
+# set :branch do
+#   default_tag = `git describe --abbrev=0 --tags`
+#   tag = default_tag
+#   tag
+# end
 
 # # Load RVM's capistrano plugin
 # load "deploy/assets"
@@ -275,28 +256,29 @@ require 'capistrano/ext/multistage'
 require "rvm/capistrano"
 
 set :application, "advisorfeed"
-set :repository,  "git@code.icicletech.com:ri/advisor-feed.git"
+# set :repository,  "git@code.icicletech.com:ri/advisor-feed.git"
 # set :rvm_type, :system
 # set :rvm_path, '/usr/local/rvm'
 set :rvm_ruby_string, 'ruby-2.1.0'
 
-set :deploy_to, "/home/icicle/sites/advisorfeed"
-set :scm, :git
-set :branch, "ss_capistrano"
-set :user, "icicle"
+# set :deploy_to, "/home/icicle/sites/advisorfeed"
+# set :scm, :git
+# set :branch, "ss_capistrano"
+# set :user, "icicle"
 
-set :copy_dir, "/home/#{user}/tmp"
-set :remote_copy_dir, "/tmp"
+# set :copy_dir, "/home/#{user}/tmp"
+# set :remote_copy_dir, "/tmp"
 
 # set :group, "deployers"
-set :use_sudo, false
-set :rails_env, "staging"
-set :deploy_via, :copy
+# set :use_sudo, false
+# set :rails_env, "staging"
+# set :deploy_via, :copy
 # set :ssh_options, { :forward_agent => true}
 ssh_options[:forward_agent] = true
 set :keep_releases, 5
 default_run_options[:pty] = true
-server "localhost", :app , :web, :db, :primary => true
+
+# server "localhost", :app , :web, :db, :primary => true
 
 namespace :deploy do
   task :start do
@@ -327,3 +309,5 @@ end
 after "deploy", "deploy:symlink_config_files"
 after "deploy", "deploy:restart"
 after "deploy", "deploy:cleanup"
+
+#####################################################################################################
