@@ -79,7 +79,8 @@
           <div class="form-actions">
             <%= f.button :submit, "Create Client" %>
             <%= link_to 'Cancel', admin_users_path, :class => "secondary-links" %>
-            <a href="" class="secondary-links reset">Reset</a>
+            <%= link_to 'Reset', new_admin_user_path, :class => "secondary-links reset" %>
+            <!-- <a href="" class="secondary-links reset">Reset</a> -->
           </div>
         <% end %>
       </div>

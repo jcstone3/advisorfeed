@@ -83,11 +83,11 @@ AdvisorFeed::Application.configure do
     :password => "advisor@123"
   }
 
-  # For a Exception Notifier configurable options
-  # config.middleware.use ExceptionNotifier,
-  # :email_prefix => "[RevenueGrader Exception]",
-  # :sender_address => %{ "RevenueGrader" <admin@revenuegrader.com> },
-  # :exception_recipients => %{"support.revenuegrader@icicletech.com"}
+  # For Exception Notifier configurable options
+  config.middleware.use ExceptionNotifier,
+    :email_prefix => "[AdvisorFeed Exception]",
+    :sender_address => %{ "AdvisorFeed" <advisorfeedtest@gmail.com> },
+    :exception_recipients => %{"support.advisor@icicletech.com"}
 
   #For S3
   ENV['AWS_ACCESS_KEY_ID'] = 'AKIAIFXHIBQNJEYRKQAA'

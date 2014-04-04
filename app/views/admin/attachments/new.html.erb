@@ -34,7 +34,8 @@
           <div class="form-actions">
             <%= f.button :submit, "Upload Report" %>
             <%= link_to 'Cancel', admin_users_path, :class => "secondary-links" %>
-            <a href="" class="secondary-links reset">Reset</a>
+            <%= link_to 'Reset', new_admin_user_attachments_path, :class => "secondary-links reset" %>
+            <!-- <a href=" " class="secondary-links reset">Reset</a> -->
           </div>
         <% end %>
       </div>

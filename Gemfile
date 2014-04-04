@@ -60,6 +60,10 @@ gem 'wicked_pdf'
 # Pagination
 gem 'will_paginate', '~> 3.0'
 
+#To receive exception mail
+gem 'exception_notification', :git => "git://github.com/rails/exception_notification.git",
+        :require => "exception_notifier"
+
 #Development
 group :development do
 	gem 'bullet'
