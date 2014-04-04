@@ -91,11 +91,12 @@ AdvisorFeed::Application.configure do
   # :password => "survey$33"
   # }
 
-  # For a full list of configurable options, see the gem's GitHub home page.
-  # config.middleware.use ExceptionNotifier,
-  # :email_prefix => "[RevenueGrader Exception]",
-  # :sender_address => %{ "RevenueGrader" <admin@revenuegrader.com> },
-  # :exception_recipients => %{"admin@revenuegrader.com"}
+  # For Exception Notifier configurable options
+  config.middleware.use ExceptionNotifier,
+    :email_prefix => "[AdvisorFeed Exception]",
+    :sender_address => %{ "AdvisorFeed" <advisorfeedtest@gmail.com> },
+    :exception_recipients => %{"support.advisor@icicletech.com"}
+
 
   #For S3
   ENV['AWS_ACCESS_KEY_ID'] = 'AKIAIFXHIBQNJEYRKQAA'

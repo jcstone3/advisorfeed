@@ -52,4 +52,10 @@ AdvisorFeed::Application.configure do
   ENV['AWS_SECRET_ACCESS_KEY'] = '2TzkupD8dZMFTo/HSXz2eyazqZrJkFHKp/W0z3CI'
   ENV["S3_BUCKET_NAME"] = 'advisor_dev'
   ENV["HOST"] = 'advisor_dev.s3-website-us-east-1.amazonaws.com'
+
+  # For Exception Notifier configurable options
+  config.middleware.use ExceptionNotifier,
+    :email_prefix => "[AdvisorFeed Exception]",
+    :sender_address => %{ "AdvisorFeed" <advisorfeedtest@gmail.com> },
+    :exception_recipients => %{"support.advisor@icicletech.com"}
 end
