@@ -35,6 +35,9 @@ gem 'jbuilder', '~> 1.2'
 #AWS - uploading reports on s3 bucket
 gem 'aws-sdk'
 
+# Use unicorn as the app server
+gem 'unicorn'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
