@@ -165,11 +165,26 @@ namespace :db do
     end
   end
 
+  # This will restart the nginx and unicorn
+  namespace :restart do
+  desc "Restarting Nginx"
+  task :nginx_restart, :roles => :app do
+    sudo "service nginx restart"
+  end
+
+  desc "Restarting Unicorn"
+  task :unicorn_restart, :roles => :app do
+    sudo "service unicorn restart"
+  end
+
 after "deploy:setup", "db:setup"   unless fetch(:skip_db_setup, false)
 after "deploy:finalize_update", "db:symlink"
 #after "db:setup", "folder:setup"
 after "deploy", "deploy:symlink_config_files"
 after "deploy", "deploy:restart"
 after "deploy", "deploy:cleanup"
+after "deploy", "restart:nginx_restart"
+after "restart:nginx_restart", "restart:unicorn_restart"
+after "restart:unicorn_restart","deploy:cleanup"
 
 #####################################################################################################
