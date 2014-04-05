@@ -37,7 +37,7 @@
                     <!-- <h5>User Account</h5> -->
                   </div>
                   <!-- <i class="icon-cog"></i> -->
-                  <%= link_to "<i class='icon-signout'></i>".html_safe, destroy_user_session_path, method: :delete %>
+                  <%= link_to "<i data-toggle='tooltip' data-placement='bottom' title='' data-original-title='Logout' class='icon-signout'></i>".html_safe, destroy_user_session_path, method: :delete %>
                 </ul>
               </div><!--/.nav-collapse -->
             <% end %>
