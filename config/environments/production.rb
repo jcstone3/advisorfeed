@@ -78,18 +78,19 @@ AdvisorFeed::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
   config.assets.debug = true
-  # config.action_mailer.default_url_options = { :host => 'www.revenuegrader.com' }
-  # config.action_mailer.perform_deliveries = true
-  # config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings = {
-  # :enable_starttls_auto => true,
-  # :address => "smtp.gmail.com",
-  # :port => 587,
-  # :domain => "www.revenuegrader.com",
-  # :authentication => :plain,
-  # :user_name => "noreply@revenuegrader.com",
-  # :password => "survey$33"
-  # }
+
+  config.action_mailer.default_url_options = { :host => 'advisorfeed.com' }
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => true,
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => "advisorfeed.com",
+    :authentication => :plain,
+    :user_name => "advisorfeedtest@gmail.com",
+    :password => "advisor@123"
+  }
 
   # For Exception Notifier configurable options
   config.middleware.use ExceptionNotifier,
