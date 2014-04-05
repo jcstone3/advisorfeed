@@ -47,7 +47,7 @@ set :repository,  "git@code.icicletech.com:ri/advisor-feed.git"
 #set :keep_releases, 1
 
 # Path for application deployment
-set :path, "/home/icicle/sites/advisorfeed"
+set :path, "/home/advisory/sites/advisorfeed"
 
 # Location  for deployment i.e server name
 role :web, "107.170.96.77"      # Your HTTP server, Apache/etc
@@ -57,9 +57,9 @@ role :db, "107.170.96.77"       # This is where Rails migrations will run
 server "107.170.96.77", :app , :web, :db, :primary => true
 
 #server location, :app, :web, :primary => true
-set :deploy_to, "/home/icicle/sites/advisorfeed"
+set :deploy_to, "/home/advisory/sites/advisorfeed"
 set :rails_env, "production"
 
 set :user_sudo, true
-set :user, "ubuntu"
-set :admin_runner, "ubuntu"
+set :user, "advisory"
+set :admin_runner, "advisory"
