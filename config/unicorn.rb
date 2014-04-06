@@ -24,7 +24,7 @@ working_directory @dir  # available in 0.94.0+
 
 # listen on both a Unix domain socket and a TCP port,
 # we use a shorter backlog for quicker failover when busy
-listen "#{@dir}tmp/sockets/unicorn.sock", :backlog => 64
+listen "#{@dir}tmp/sockets/advisoryfeed.unicorn.sock", :backlog => 64
 #listen 8080, :tcp_nopush => true
 
 # feel free to point this anywhere accessible on the filesystem

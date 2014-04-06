@@ -25,9 +25,11 @@ require "rvm/capistrano"
 set :application, "advisorfeed"
 # set :repository,  "git@code.icicletech.com:ri/advisor-feed.git"
 
-set :rvm_type, :system
-set :rvm_path, '/usr/local/rvm'
+# set :rvm_type, :system
+# set :rvm_path, '/usr/local/rvm'
 set :rvm_ruby_string, 'ruby-2.1.0'
+# set :rvm_ruby_string,  ENV['GEM_HOME'].gsub(/.*\//,"")
+# set :rvm_type, :user
 
 # set :deploy_to, "/home/icicle/sites/advisorfeed"
 # set :scm, :git
