@@ -31,6 +31,9 @@ set :rvm_ruby_string, 'ruby-2.1.0'
 # set :rvm_ruby_string,  ENV['GEM_HOME'].gsub(/.*\//,"")
 # set :rvm_type, :user
 
+# Load RVM's capistrano plugin
+load "deploy/assets"
+
 # set :deploy_to, "/home/icicle/sites/advisorfeed"
 # set :scm, :git
 # set :branch, "ss_capistrano"
@@ -182,10 +185,10 @@ namespace :db do
   end
 
 after "deploy:setup", "db:setup"   unless fetch(:skip_db_setup, false)
+after "symlink_config_files", "deploy:precompile_assets"
 after "deploy:finalize_update", "db:symlink"
 #after "db:setup", "folder:setup"
 after "deploy", "deploy:symlink_config_files"
-after "symlink_config_files", "deploy:precompile_assets"
 after "deploy", "deploy:restart"
 after "deploy", "deploy:cleanup"
 after "deploy", "restart:nginx_restart"
