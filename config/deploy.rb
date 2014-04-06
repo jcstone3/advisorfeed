@@ -185,6 +185,7 @@ after "deploy:setup", "db:setup"   unless fetch(:skip_db_setup, false)
 after "deploy:finalize_update", "db:symlink"
 #after "db:setup", "folder:setup"
 after "deploy", "deploy:symlink_config_files"
+after "symlink_config_files", "deploy:precompile_assets"
 after "deploy", "deploy:restart"
 after "deploy", "deploy:cleanup"
 after "deploy", "restart:nginx_restart"
