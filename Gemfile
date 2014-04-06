@@ -37,6 +37,9 @@ gem 'jbuilder', '~> 1.2'
 #AWS - uploading reports on s3 bucket
 gem 'aws-sdk'
 
+# Use unicorn as the app server
+gem 'unicorn'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -133,7 +136,12 @@ gem 'rails_12factor', group: :production
 # gem 'unicorn'
 
 # Use Capistrano for deployment
-# gem 'capistrano', group: :development
+gem 'capistrano', '2.15.5', group: :development
+gem 'net-ssh', '2.7.0', group: :development
+gem 'rvm-capistrano', group: :development
+# gem 'capistrano-ext'
+# gem 'capistrano-multistage'
+# gem 'rvm-capistrano'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
