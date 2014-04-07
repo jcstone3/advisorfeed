@@ -24,7 +24,9 @@
 
            <div id="photo_attachment_container">
             <div class="wrapper">
-              <%= f.file_field :avatar, :required => true, placeholder: "Avatar" %>
+              <%= f.input :avatar, :required => true, wrapper: :prepend, :autofocus => true, placeholder: "Avatar" do %>
+                <%= f.file_field :avatar, as: "file" %>
+              <% end %>
             </div>
             <button class ="action-btn-left upload-report"><i class="icon-paper-clip"></i></i> <span>Choose File</span></button>
             <p></p>
