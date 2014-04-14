@@ -14,7 +14,7 @@ AdvisorFeed::Application.configure do
   config.action_controller.perform_caching = true
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -34,17 +34,28 @@ AdvisorFeed::Application.configure do
   config.action_mailer.perform_deliveries = true
 
   #Use Letter Opener
-  config.action_mailer.delivery_method = :letter_opener
+  # config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
     :enable_starttls_auto => true,
-    :address => "smtp.gmail.com",
+    :address => "rsb11.rhostbh.com",
     :port => 587,
     :domain => "localhost",
     :authentication => :plain,
-    :user_name => "advisorfeedtest@gmail.com",
-    :password => "advisor@123"
+    :user_name => "support@advisorfeed.com",
+    :password => "q0UHFaA'zd"
   }
+
+  # config.action_mailer.smtp_settings = {
+  #   :enable_starttls_auto => true,
+  #   :address => "smtp.gmail.com",
+  #   :port => 587,
+  #   :domain => "localhost",
+  #   :authentication => :plain,
+  #   :user_name => "noreply@revenuegrader.com",
+  #   :password => "survey$33"
+  # }
   Paperclip.options[:command_path] = "/usr/local/bin/"
 
   #For S3
@@ -54,8 +65,8 @@ AdvisorFeed::Application.configure do
   ENV["HOST"] = 'advisor_dev.s3-website-us-east-1.amazonaws.com'
 
   # For Exception Notifier configurable options
-  config.middleware.use ExceptionNotifier,
-    :email_prefix => "[AdvisorFeed Exception]",
-    :sender_address => %{ "AdvisorFeed" <advisorfeedtest@gmail.com> },
-    :exception_recipients => %{"support.advisor@icicletech.com"}
+  # config.middleware.use ExceptionNotifier,
+  #   :email_prefix => "[AdvisorFeed Exception]",
+  #   :sender_address => %{ "AdvisorFeed" <support@advisorfeed.com> },
+  #   :exception_recipients => %{"support.advisor@icicletech.com"}
 end

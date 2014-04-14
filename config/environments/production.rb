@@ -63,7 +63,7 @@ AdvisorFeed::Application.configure do
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found).
@@ -84,20 +84,19 @@ AdvisorFeed::Application.configure do
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
     :enable_starttls_auto => true,
-    :address => "smtp.gmail.com",
+    :address => "rsb11.rhostbh.com",
     :port => 587,
     :domain => "vcmi.advisorfeed.com",
     :authentication => :plain,
-    :user_name => "advisorfeedtest@gmail.com",
-    :password => "advisor@123"
+    :user_name => "support@advisorfeed.com",
+    :password => "q0UHFaA'zd"
   }
 
   # For Exception Notifier configurable options
-  config.middleware.use ExceptionNotifier,
-    :email_prefix => "[AdvisorFeed Exception]",
-    :sender_address => %{ "AdvisorFeed" <advisorfeedtest@gmail.com> },
-    :exception_recipients => %{"support.advisor@icicletech.com"}
-
+  # config.middleware.use ExceptionNotifier,
+  #   :email_prefix => "[AdvisorFeed Exception]",
+  #   :sender_address => %{ "AdvisorFeed" <support@advisorfeed.com> },
+  #   :exception_recipients => %{"support.advisor@icicletech.com"}
 
   #For S3
   ENV['AWS_ACCESS_KEY_ID'] = 'AKIAIFXHIBQNJEYRKQAA'
