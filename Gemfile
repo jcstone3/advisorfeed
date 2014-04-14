@@ -69,6 +69,9 @@ gem 'exception_notification'
 #, :git => "git://github.com/rails/exception_notification.git",
 #         :require => "exception_notifier"
 
+#Add required key/values to load from YAML file
+gem 'settingslogic', '~> 2.0.9'
+
 #Development
 group :development do
 	gem 'bullet'

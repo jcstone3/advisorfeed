@@ -9,11 +9,11 @@
 Admin.delete_all
 
 @admin = Admin.new
-@admin.email = "support@advisorfeed.com"
-@admin.password = "q0UHFaA'zd"
-@admin.password_confirmation = "q0UHFaA'zd"
-@admin.first_name = "John"
-@admin.last_name = "Stone"
+@admin.email = Settings.email
+@admin.password = Settings.password
+@admin.password_confirmation = Settings.password
+@admin.first_name = Settings.first_name
+@admin.last_name = Settings.last_name
 @admin.save
 
 puts "Admin successfully created!"

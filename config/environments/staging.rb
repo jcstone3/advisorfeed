@@ -90,8 +90,8 @@ AdvisorFeed::Application.configure do
   #   :exception_recipients => %{"support.advisor@icicletech.com"}
 
   #For S3
-  ENV['AWS_ACCESS_KEY_ID'] = 'AKIAIFXHIBQNJEYRKQAA'
-  ENV['AWS_SECRET_ACCESS_KEY'] = '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'
-  ENV["S3_BUCKET_NAME"] = 'advisor_stage'
-  ENV["HOST"] = 'advisor_stage.s3-website-us-east-1.amazonaws.com'
+  ENV['AWS_ACCESS_KEY_ID'] = Settings.aws_access_key_id
+  ENV['AWS_SECRET_ACCESS_KEY'] = Settings.aws_secret_access_key
+  ENV["S3_BUCKET_NAME"] = Settings.s3_bucket_name
+  ENV["HOST"] = Settings.host
 end
