@@ -5,12 +5,12 @@ class Attachment < ActiveRecord::Base
   has_attached_file :avatar,
                     storage: :s3,
                     s3_credentials: {
-                      access_key_id: ENV['AWS_ACCESS_KEY_ID'],
-                      secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
-                      bucket: ENV['S3_BUCKET_NAME']
+                      access_key_id: Settings.aws_access_key_id,
+                      secret_access_key: Settings.aws_secret_access_key,
+                      bucket: Settings.s3_bucket_name
                       },
                     s3_permissions: :private,
-                    url: ENV['HOST'] ,
+                    url: Settings.host ,
                     path: "users/:user_id/attachment/:id/:basename.:extension"
 
   # validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
