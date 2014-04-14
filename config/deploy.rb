@@ -59,8 +59,10 @@ namespace :deploy do
 
   desc "Symlink shared config files"
   task :symlink_config_files do
-    run "#{ sudo } ln -s #{ deploy_to }/shared/config/database.yml #{ current_path }/config/database.yml"
-    run "#{ sudo } ln -s #{ deploy_to }/shared/config/application.yml #{ current_path }/config/application.yml"
+    # run "#{ sudo } ln -s #{ deploy_to }/shared/config/database.yml #{ current_path }/config/database.yml"
+    # run "#{ sudo } ln -s #{ deploy_to }/shared/config/application.yml #{ current_path }/config/application.yml"
+    #
+    run "ln -nfs #{shared_path}/config/application.yml #{release_path}/config/application.yml"
   end
 
   # NOTE: I don't use this anymore, but this is how I used to do it.
@@ -189,7 +191,7 @@ after "deploy:setup", "db:setup"   unless fetch(:skip_db_setup, false)
 after "symlink_config_files", "deploy:precompile_assets"
 after "deploy:finalize_update", "db:symlink"
 #after "db:setup", "folder:setup"
-after "deploy", "deploy:symlink_config_files"
+after "db:symlink", "deploy:symlink_config_files"
 after "deploy", "deploy:restart"
 after "deploy", "deploy:cleanup"
 after "deploy", "restart:nginx_restart"

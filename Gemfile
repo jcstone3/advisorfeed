@@ -42,7 +42,7 @@ gem 'unicorn'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
+  gem 'sdoc', :require => false
 end
 
 #Authentication & Authorization
@@ -80,28 +80,28 @@ group :development do
 	gem 'annotate'       #Annotating Models, Routes
 
 	#Quality
-  gem 'rails_best_practices', require: false
-  gem 'rubocop', require: false
+  gem 'rails_best_practices', :require => false
+  gem 'rubocop', :require => false
 
   #Security
-  gem 'brakeman', require: false
+  gem 'brakeman', :require => false
 
   gem 'better_errors' #Only in Dev environment
 
   #Automating with Guard
 	# gem 'guard'
 	gem 'libnotify'
-  gem 'rb-inotify', require: false
+  gem 'rb-inotify', :require => false
   gem 'guard-annotate'
   gem 'guard-rails_best_practices'
   gem 'guard-rubocop'
-  gem 'yard', require: false
+  gem 'yard', :require => false
   gem "binding_of_caller"
 end
 
 #Testing
 group :test, :development do
-  gem 'cucumber-rails', require: false
+  gem 'cucumber-rails', :require => false
   gem 'rspec-rails'
   #gem 'rspec-gc-control'
   gem 'capybara'
