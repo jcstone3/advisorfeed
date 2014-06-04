@@ -19,8 +19,8 @@ module AdvisorFeed
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-    Squash::Ruby.configure :api_host => 'http://198.199.123.91',
-    :api_key => '526436de-1cbf-42f1-94e0-ef8dfe23abc6',
+    Squash::Ruby.configure :api_host => 'http://ex.icicletech.com/',
+    :api_key => 'c54a4ccc-3dd1-4101-a023-e9d1e8104a6e',
     :disabled => (Rails.env.development? || Rails.env.test?)
   end
 end
