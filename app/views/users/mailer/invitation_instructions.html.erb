@@ -65,12 +65,15 @@
                   <td width="580">
                     <p align="left" style="font-size: 24px;line-height: 32px; color: #41464A; font-weight:bold; margin-top:0px; margin-bottom:18px;">
 
-                      <singleline>Hey <%= @resource.first_name %><%= @resource.last_name %>,</singleline>
+                      <singleline>Hey <%= @resource.first_name %>&nbsp;<%= @resource.last_name %>,</singleline>
                     </p>
                     <em style="color: #8C8A8B;
 font-style: normal;
 font-size: 16px;
-line-height: 23px;">You have been invited to AdvisorFeed. Please click on below link to accept the invitation.</em>
+line-height: 23px;">Welcome to the Vision Capital Management web portal, exclusively for the delivery of your quarterly reports.   This email is to alert you that your 2nd Quarter, 2014 report has been uploaded and awaiting your review.
+</br>
+</br>
+Please click on the link below to accept your invitation.</em>
                     <!-- <p align="left" style="margin-bottom: 15px;
 color: #72D0EB;
 font-size: 16px;
@@ -143,9 +146,17 @@ width: 200px;">
                       font-style: normal;
                       font-size: 10px;
                       line-height: 14px;font-style: italic;/* border-top: 1px solid; */">
-                                Note:
-                      Our application traffic runs entirely over 128-bit encrypted SSL (https) to safeguard your reports.
-                      <br>Passwords are encrypted before storing into database.
+                                Security of your information is a high priority. We safeguard your information in the following ways.
+</br>
+</br>
+- Encryption. Encryption is the process of encoding information in such a way that only the authorized party can read the information. The portal traffic runs entirely over 128-bit encrypted SSL (https).
+</br>
+- Password masking / separate storage. Password masking is the practice of replacing the characters a user types into the password entry field with bullets.
+</br>
+- Passwords are hashed before storing using and application credentials are kept separate from the database and code base for additional security.
+</br>
+</br>
+If you should forget or loss your password we have provided a password reset button on the portal. If you would like to continue to receive your reports via mail please contact Megan McElroy at 503-731-7301 or megan@vcmi.net.
                             </em>
                           </td>
                         </tr>
