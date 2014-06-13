@@ -20,7 +20,13 @@
     <tbody class="table-items">
       <% @users.each do |user| %>
       <tr>
-        <td><%= user.first_name %> <%= user.last_name.truncate(10) %></td>
+        <td><%= user.first_name %>
+          <span>
+            <% if user.last_name.present? %>
+              <%= user.last_name.truncate(10) %>
+            <% end %>
+          </span>
+        </td>
         <td>
           <div class="icons">
             <%= link_to "<i class='icon-cloud-upload'></i> Upload Report".html_safe, new_admin_user_attachments_path(:user_id => user.id),  { :class=>"action-upload" } %>

@@ -22,7 +22,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def index
-    @users = User.paginate(:page => params[:page], :per_page => 5).order(:last_name)
+    @users = User.paginate(:page => params[:page], :per_page => 25).order(:last_name)
   end
 
   def edit
