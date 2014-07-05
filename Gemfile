@@ -72,6 +72,9 @@ gem 'exception_notification'
 #Add required key/values to load from YAML file
 gem 'settingslogic', '~> 2.0.9'
 
+gem 'sidekiq'
+gem 'redis'
+
 #Development
 group :development do
 	gem 'bullet'
