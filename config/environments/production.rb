@@ -60,6 +60,12 @@ AdvisorFeed::Application.configure do
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
   # config.assets.precompile += %w( search.js )
+ 
+  # For sidekiq settings
+  ENV['SIDEKIQ_CONCURRENCY'] = '2'
+
+  ENV['REDIS_URL'] = 'redis://:Adv!sory@productio@localhost:6379'
+ 
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
