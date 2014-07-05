@@ -1,0 +1,7 @@
+:concurrency: 2
+:timeout: 30
+:verbose: false
+:logfile: log/sidekiq.log
+:pidfile: tmp/pids/sidekiq.pid
+:queues:
+  - [invitation_worker, 2]
