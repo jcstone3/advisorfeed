@@ -14,8 +14,8 @@ class Attachment < ActiveRecord::Base
                     path: "users/:user_id/attachment/:id/:basename.:extension"
 
   # validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
-  validates_attachment :avatar, content_type: { content_type: "application/pdf" }
-  validates_presence_of :file_name, :message => "Can't be blank"
-  validates_presence_of :file_note, :message => "Can't be blank"
-  validates_attachment_presence :avatar
+  validates_attachment :avatar, content_type: { content_type: "application/pdf" }, :message => "Only pdf format is allowed for attachment"
+  # validates_presence_of :file_name, :message => "Can't be blank"
+  # validates_presence_of :file_note, :message => "Can't be blank"
+  validates_attachment_presence :avatar, :message => "Please attach a file"
 end

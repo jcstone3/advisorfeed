@@ -31,6 +31,13 @@ class Admin::UsersController < ApplicationController
 
   def edit_password
     @user = User.find_by_id(params[:user_id])
+    respond_to do |format|
+      if @user.invitation_token.present?
+          format.html { redirect_to admin_users_path, notice: "You can't reset the password, #{' '}#{@user.first_name}#{' '}#{@user.last_name} has not yet accepted the invitation. You can re-invite the user." }
+      else
+        format.html { render action: 'edit_password' }
+      end
+    end
   end
 
   def update_password

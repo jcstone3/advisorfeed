@@ -662,6 +662,7 @@ p.desciption {
     margin-bottom: 20px;
   }
   .big-page {
+    height: 150px;
     .page-content {
       min-height: 150px;
       h2 {
@@ -862,16 +863,18 @@ textarea {
     #photo_attachment_container {
       position: relative;
       .wrapper {
+
         opacity: 0;
         cursor: pointer;
         position: absolute;
         top: 0px;
         z-index: 2;
-        left: 10px;
+        left: 5px;
+        width: 135px;
       }
       .upload-report {
         position: absolute;
-        top: -15px;
+        // top: -15px;
         left: 5px;
         border: none !important;
       }
@@ -1005,4 +1008,20 @@ textarea {
       padding: 10px 20px !important;
     }
   }
+}
+
+.spinner {
+  margin: auto;
+  width: 50%;
+  margin-top: 8px;
+}
+
+.file-errors {
+  color: #b94a48;
+  float: left;
+  margin: 45px 0px 0px 6px;
+}
+
+.uploaded-file-name {
+  margin-top: 15px;
 }

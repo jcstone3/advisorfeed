@@ -5,9 +5,8 @@ class Admin::InvitationsController < Devise::InvitationsController
 
   def create
     user = User.find_by_id(params[:id])
-    if user.invite!(current_admin)
-      flash[:success] = "#{user.first_name}#{' '}#{user.last_name} invited successfully! "
-      redirect_to admin_users_path
-    end
+    InvitationWorker.perform_async(current_admin.id, user.id)
+    flash[:success] = "#{user.first_name}#{' '}#{user.last_name} invited successfully! "
+    redirect_to admin_users_path
   end
 end

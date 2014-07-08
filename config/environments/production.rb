@@ -61,6 +61,11 @@ AdvisorFeed::Application.configure do
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
   # config.assets.precompile += %w( search.js )
 
+  # For sidekiq settings
+  ENV['SIDEKIQ_CONCURRENCY'] = '2'
+
+  ENV['REDIS_URL'] = 'redis://:Adv!sory@productio@localhost:6379'
+
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   config.action_mailer.raise_delivery_errors = true
@@ -80,16 +85,26 @@ AdvisorFeed::Application.configure do
   config.assets.debug = true
 
   config.action_mailer.default_url_options = { :host => 'vcmi.advisorfeed.com' }
-    config.action_mailer.perform_deliveries = true
-    config.action_mailer.delivery_method = :smtp
-    config.action_mailer.smtp_settings = {
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   :enable_starttls_auto => true,
+  #   :address => "rsb11.rhostbh.com",
+  #   :port => 587,
+  #   :domain => "vcmi.advisorfeed.com",
+  #   :authentication => :plain,
+  #   :user_name => "support@advisorfeed.com",
+  #   :password => "q0UHFaA'zd"
+  # }
+
+  config.action_mailer.smtp_settings = {
     :enable_starttls_auto => true,
-    :address => "rsb11.rhostbh.com",
-    :port => 587,
+    :address => "smtp.mandrillapp.com",
+    :port => 25,
     :domain => "vcmi.advisorfeed.com",
     :authentication => :plain,
-    :user_name => "support@advisorfeed.com",
-    :password => "q0UHFaA'zd"
+    :user_name => "reports@vcmi.net",
+    :password => "jPS2bildlGsI9bnmYbdyWA"
   }
 
   # For Exception Notifier configurable options
