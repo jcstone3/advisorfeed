@@ -64,7 +64,7 @@ AdvisorFeed::Application.configure do
   # For sidekiq settings
   ENV['SIDEKIQ_CONCURRENCY'] = '2'
 
-  ENV['REDISTOGO_URL'] = 'redis://redistogo:Adv!sory@productio@localhost:6379'
+  ENV['REDISTOGO_URL'] = 'redis://redistogo:Adv!sory@production@localhost:6379'
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
