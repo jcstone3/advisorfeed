@@ -22,7 +22,7 @@
             <%= f.input_field :password_confirmation, placeholder: "Password Confirmation" %>
             <% end %>
 
-            <%= f.input :secret_text, required: true, wrapper: :prepend, error: true, hint: 'Hint: Enter secret text given by admin' do %>
+            <%= f.input :secret_text, required: true, wrapper: :prepend, error: true do %>
               <span class="add-on"><i class="icon-pencil"></i></span>
             <%= f.input_field :secret_text, placeholder: "Secret Text", :value => ''%>
             <% end %>

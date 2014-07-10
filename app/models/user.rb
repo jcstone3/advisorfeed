@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   # Relationships
   has_many :attachments, class_name: 'Attachment', foreign_key: 'user_id', dependent: :destroy
+
+  attr_accessor :secret_text
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable, :registerable
   devise :invitable, :database_authenticatable, :recoverable, :rememberable, :trackable #, :validatable
