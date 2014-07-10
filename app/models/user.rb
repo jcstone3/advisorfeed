@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 
   validates_presence_of :first_name, :message => "Can't be blank"
   validates_presence_of :last_name, :message => "Can't be blank"
+  validates_presence_of :secret_text, :message => "Can't be blank"
   validates_format_of :first_name, :with =>/^[a-z A-Z][a-z A-Z 0-9_]*$/, :allow_blank => true, :message => "Should contain only alphabets", :multiline => true
   validates_format_of :last_name, :with =>/^[a-z A-Z][a-z A-Z 0-9_]*$/, :allow_blank => true, :message => "Should contain only alphabets", :multiline => true
   # validates_presence_of :password, :presence => true, :message  => "Can't be blank"

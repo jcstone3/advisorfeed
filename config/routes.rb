@@ -5,7 +5,8 @@ AdvisorFeed::Application.routes.draw do
     get 'admins/sign-up' => 'admin/sessions#new', :as => "new_admin_session"
   end
 
-  devise_for :users
+  devise_for :users, controllers: { :invitations => 'users/invitations' }
+  # devise_for :users, controllers: { registrations: "registrations", :invitations => 'users/invitations', sessions: "sessions", confirmations: "confirmations", passwords: "passwords" }
 
   #admin settingss
   namespace :admin do
