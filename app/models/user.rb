@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
 
   validates_presence_of :first_name, :message => "Can't be blank"
   validates_presence_of :last_name, :message => "Can't be blank"
-  validates_presence_of :secret_text, :message => "Can't be blank"
+  # validates_presence_of :secret_text, :message => "Can't be blank"
   validates_format_of :first_name, :with =>/^[a-z A-Z][a-z A-Z 0-9_]*$/, :allow_blank => true, :message => "Should contain only alphabets", :multiline => true
   validates_format_of :last_name, :with =>/^[a-z A-Z][a-z A-Z 0-9_]*$/, :allow_blank => true, :message => "Should contain only alphabets", :multiline => true
   # validates_presence_of :password, :presence => true, :message  => "Can't be blank"
@@ -24,9 +24,23 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email, :case_sensitive => false, :allow_blank => true, :if => :email_changed?, :message=> "Email address already taken"
   validates_format_of :email, :with  => Devise.email_regexp, :allow_blank => true, :if => :email_changed?, :message => "Invalid email address"
 
+  # custom validation for secret text matching
+  # validate :secret_text_match
+  validates :secret_text , secret_text: true #, :on => :update #, :if => :secret_text_changed?
+  validates :password , secret_text: true
+
+  # def secret_text_match
+  #   Rails.logger.debug "in model ppppppppppppppppppppppppppp"
+  #   # Rails.logger.debug params.inspect
+  #   Rails.logger.debug self.password.inspect
+  #   Rails.logger.debug self.secret_text.inspect
+  #   # if self.secret_text.present?
+  #     errors.add :base, "Secret text is not matching"
+  #   # end
+  # end
+
   protected
   def password_required?
     !persisted? || !password.nil? || !password_confirmation.nil?
   end
-
 end

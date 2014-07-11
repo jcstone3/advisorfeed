@@ -19,6 +19,10 @@ module AdvisorFeed
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    # add custom validators path
+    config.autoload_paths += %W["#{config.root}/app/validators/"]
+
     Squash::Ruby.configure :api_host => 'http://ex.icicletech.com/',
     :api_key => 'c54a4ccc-3dd1-4101-a023-e9d1e8104a6e',
     :disabled => (Rails.env.development? || Rails.env.test?)
