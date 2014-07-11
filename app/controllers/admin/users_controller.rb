@@ -15,7 +15,6 @@ class Admin::UsersController < ApplicationController
       if @user.save
         format.html { redirect_to admin_users_path, notice: "#{@user.first_name}#{' '}#{@user.last_name} was successfully created." }
       else
-        Rails.logger.debug @user.errors.inspect
         format.html { render action: 'new' }
       end
     end
@@ -46,7 +45,6 @@ class Admin::UsersController < ApplicationController
       if @user.update(user_params)
         format.html { redirect_to admin_users_path, notice: "Successfully updated #{@user.first_name}#{' '}#{@user.last_name} password." }
       else
-        Rails.logger.debug @user.errors.inspect
         format.html { render action: 'edit_password' }
       end
     end
@@ -58,7 +56,6 @@ class Admin::UsersController < ApplicationController
       if @user.update(user_params)
         format.html { redirect_to admin_users_path, notice: "#{@user.first_name}#{' '}#{@user.last_name} was successfully updated." }
       else
-        Rails.logger.debug @user.errors.inspect
         format.html { render action: 'edit' }
       end
     end

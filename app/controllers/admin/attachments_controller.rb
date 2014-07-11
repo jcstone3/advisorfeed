@@ -15,7 +15,6 @@ class Admin::AttachmentsController < ApplicationController
         format.html { redirect_to admin_user_view_reports_path(:user_id => @user.id), notice: "Successfully uploaded #{@user.first_name}#{' '}#{@user.last_name} report." }
       else
         @reports = @user.attachments
-        Rails.logger.debug @attachment.errors.inspect
         format.html { render action: 'new' }
       end
     end
