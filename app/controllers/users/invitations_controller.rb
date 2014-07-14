@@ -1,5 +1,5 @@
 class Users::InvitationsController < Devise::InvitationsController
-  before_filter :configure_permitted_parameters, :set_user, :set_from_invitation
+  before_filter :configure_permitted_parameters #, :set_user, :set_from_invitation
   prepend_before_filter :require_no_authentication, :only => [:edit, :update]
   #prepend_before_filter :resource_from_invitation_token, :only => [:edit]
 
@@ -8,14 +8,16 @@ class Users::InvitationsController < Devise::InvitationsController
   end
 
   def update
+    resource = user = User.find_by_invitation_token(params[:user][:invitation_token], false)
+    user.enable_validation = true
     super
   end
 
-  # private
+  private
 
-  # def user_params
-  #   params.require(:user).permit(:password, :password_confirmation, :secret_text, :invitation_token, :terms_of_service)
-  # end
+  def user_params
+    params.require(:user).permit(:password, :password_confirmation, :secret_text, :invitation_token, :enable_validation)
+  end
 
   #this is to include secret text as a field to be validated while accepting invitation
 
@@ -27,14 +29,9 @@ class Users::InvitationsController < Devise::InvitationsController
     # Override accepted parameters
     devise_parameter_sanitizer.for(:accept_invitation) do |u|
       u.permit(:password, :password_confirmation, :secret_text,
-               :invitation_token, :terms_of_service)
+               :invitation_token, :terms_of_service, :enable_validation)
     end
   end
 
-  def set_user
-    @object = User.find_by_invitation_token(params[:invitation_token], false)
-  end
-  def set_from_invitation
-    @object.from_invitation = true
-  end
+
 end

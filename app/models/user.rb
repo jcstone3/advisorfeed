@@ -2,7 +2,8 @@ class User < ActiveRecord::Base
   # Relationships
   has_many :attachments, class_name: 'Attachment', foreign_key: 'user_id', dependent: :destroy
 
-  attr_accessor :from_invitation, :secret_text
+  attr_accessor :enable_validation, :secret_text
+
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable, :registerable
@@ -26,8 +27,12 @@ class User < ActiveRecord::Base
 
   # custom validation for secret text matching
   # validate :secret_text_match
-  validates :secret_text , secret_text: true #, :if => lambda { self.from_invitation}
-  validates :terms_of_service, acceptance: true
+  validates :secret_text, secret_text: true, :if => :has_user_secret
+
+
+  def has_user_secret
+    return true if enable_validation
+  end
 
   protected
   def password_required?
