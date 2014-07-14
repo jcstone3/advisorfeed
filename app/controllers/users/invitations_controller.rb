@@ -1,5 +1,5 @@
 class Users::InvitationsController < Devise::InvitationsController
-  before_filter :configure_permitted_parameters
+  before_filter :configure_permitted_parameters, :set_user, :set_from_invitation
   prepend_before_filter :require_no_authentication, :only => [:edit, :update]
   #prepend_before_filter :resource_from_invitation_token, :only => [:edit]
 
@@ -29,5 +29,12 @@ class Users::InvitationsController < Devise::InvitationsController
       u.permit(:password, :password_confirmation, :secret_text,
                :invitation_token)
     end
+  end
+
+  def set_user
+    @object = User.find_by_invitation_token(params[:invitation_token], false)
+  end
+  def set_from_invitation
+    @object.from_invitation = true
   end
 end
