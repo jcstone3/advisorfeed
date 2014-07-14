@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
   # custom validation for secret text matching
   # validate :secret_text_match
   validates :secret_text, secret_text: true, :if => :has_user_secret
-
+  validates :terms_of_service, acceptance: true
 
   def has_user_secret
     return true if enable_validation
