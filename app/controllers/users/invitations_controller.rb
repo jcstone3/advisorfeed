@@ -11,11 +11,11 @@ class Users::InvitationsController < Devise::InvitationsController
     super
   end
 
-  private
+  # private
 
-  def user_params
-    params.require(:user).permit(:password, :password_confirmation, :secret_text, :invitation_token)
-  end
+  # def user_params
+  #   params.require(:user).permit(:password, :password_confirmation, :secret_text, :invitation_token, :terms_of_service)
+  # end
 
   #this is to include secret text as a field to be validated while accepting invitation
 
@@ -23,11 +23,11 @@ class Users::InvitationsController < Devise::InvitationsController
 
   def configure_permitted_parameters
     # Only add some parameters
-    devise_parameter_sanitizer.for(:accept_invitation).concat [:secret_text]
+    devise_parameter_sanitizer.for(:accept_invitation).concat [:secret_text, :terms_of_service]
     # Override accepted parameters
     devise_parameter_sanitizer.for(:accept_invitation) do |u|
       u.permit(:password, :password_confirmation, :secret_text,
-               :invitation_token)
+               :invitation_token, :terms_of_service)
     end
   end
 

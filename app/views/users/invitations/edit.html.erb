@@ -24,7 +24,16 @@
 
             <%= f.input :secret_text, required: true, wrapper: :prepend, error: true do %>
               <span class="add-on"><i class="icon-pencil"></i></span>
-              <%= f.input_field :secret_text, placeholder: "Secret Text", :value => ''%>
+              <%= f.input_field :secret_text, placeholder: "Secret Code", :value => ''%>
+            <% end %>
+
+            <%= f.input :terms_of_service, required: true, as: :boolean, checked_value: true, unchecked_value: false do %>
+              <span class="label-tos">
+                <a href="http://www.advisorfeed.com/about-advisorfeed/terms-of-service/" target="_blank">
+                  Terms of Service
+                </a>
+              </span>
+              <%= f.input_field :terms_of_service, as: :boolean %>
             <% end %>
 
           <%= f.submit "Set My Password", :class => 'btn small' %>
