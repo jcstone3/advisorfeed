@@ -19,9 +19,12 @@ $ ->
     (if @length > n then @substr(0, n - 1) + "..." else this)
 
 
-# Display file names on file selection
+  # Display file names on file selection
   $("#attachment_avatar").change ->
     txt = $(this).val().split('\\').pop()
     txt = txt.trunc 45
     $('#photo_attachment_container').find('p').html txt
     return
+
+  # Fallback placeholder for older browsers
+  $("input[type=text], textarea").placeholder()
