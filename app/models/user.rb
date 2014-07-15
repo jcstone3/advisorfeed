@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Relationships
   has_many :attachments, class_name: 'Attachment', foreign_key: 'user_id', dependent: :destroy
 
-  #attr_accessor :enable_validation#, :secret_text
+  attr_accessor :enable_validation
 
 
   # Include default devise modules. Others available are:
@@ -14,8 +14,6 @@ class User < ActiveRecord::Base
   validates_presence_of :secret_text, :message => "Can't be blank"
   validates_format_of :first_name, :with =>/^[a-z A-Z][a-z A-Z 0-9_]*$/, :allow_blank => true, :message => "Should contain only alphabets", :multiline => true
   validates_format_of :last_name, :with =>/^[a-z A-Z][a-z A-Z 0-9_]*$/, :allow_blank => true, :message => "Should contain only alphabets", :multiline => true
-  # validates_presence_of :password, :presence => true, :message  => "Can't be blank"
-  # validates_length_of :password,  :within => 6..30, :message => "Should be greater than 6 and less than 30"
 
   validates_presence_of     :password, :if => :password_required?
   validates_confirmation_of :password, :if => :password_required?
@@ -26,8 +24,8 @@ class User < ActiveRecord::Base
   validates_format_of :email, :with  => Devise.email_regexp, :allow_blank => true, :if => :email_changed?, :message => "Invalid email address"
 
   # custom validation for secret text matching
-  # validate :secret_text_match
-  #validates :secret_text, secret_text: true, :if => :has_user_secret
+  validates :secret_text, secret_text: true, :if => :has_user_secret
+
   validates :terms_of_service, acceptance: true
 
   def has_user_secret

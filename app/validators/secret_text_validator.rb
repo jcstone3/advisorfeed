@@ -1,12 +1,10 @@
 class SecretTextValidator < ActiveModel::EachValidator
-  include DeviseInvitable::Inviter
-
-  attr_accessor :secret_text
 
   def validate_each(record, attribute, value)
-
-    unless value == record[:secret_text]
-      record.errors[attribute] << (options[:message] || "Secret text not matching")
+    #get stored record and compare with the passed value
+    user = User.find_by_id(record[:id])
+    unless value == user.secret_text
+      record.errors[attribute] << (options[:message] || "Secret Code not matching")
     end
   end
 end

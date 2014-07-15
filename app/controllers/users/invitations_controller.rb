@@ -13,7 +13,7 @@ class Users::InvitationsController < Devise::InvitationsController
     super
   end
 
-  private
+  # private
 
   def user_params
     params.require(:user).permit(:password, :password_confirmation, :secret_text, :invitation_token, :enable_validation, :terms_of_service)
