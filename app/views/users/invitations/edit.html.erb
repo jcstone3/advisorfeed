@@ -33,7 +33,7 @@
                   Terms of Service
                 </a>
               </span>
-              <%= f.input_field :terms_of_service, as: :boolean %>
+              <%= f.input_field :terms_of_service, as: :boolean, checked: true %>
             <% end %>
             <%= f.hidden_field :enable_validation, value: true %>
           <%= f.submit "Set My Password", :class => 'btn small' %>
