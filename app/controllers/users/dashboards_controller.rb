@@ -19,5 +19,6 @@ class Users::DashboardsController < ApplicationController
 
   def squash_test
     nil.id
+    return
   end
 end
