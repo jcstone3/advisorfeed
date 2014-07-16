@@ -260,6 +260,7 @@ button.btn, input[type="submit"].btn {
   // text-transform: uppercase;
   margin-top: 10px;
   border-radius: 4px;
+  width: 100%;
 }
 .small {
   padding: 10px 85px !important;
@@ -1068,9 +1069,15 @@ textarea {
   .form-inputs label {
     display: inline-block;
     float: left;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 500;
   }
   .auth-form label {
     display: inline-block;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 500;
   }
   .password,.user_secret_code {
     text-align: left;
@@ -1079,17 +1086,23 @@ textarea {
     display: none;
   }
 }
+
 .invitations-update {
   .user_password_confirmation {
     label {
       margin-left: -85px;
       margin-top: 25px;
+      text-transform: capitalize;
     }
   }
+}
 
 .acceptance-text {
   width: 350px;
   font-size: 12px;
   margin: 5px 0px 0px -34px;
   color: #979797;
+}
+abbr[title], abbr[data-original-title] {
+  display: none;
 }
