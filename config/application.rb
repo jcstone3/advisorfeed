@@ -22,9 +22,9 @@ module AdvisorFeed
 
     # add custom validators path
     config.autoload_paths += %W["#{config.root}/app/validators/"]
-
-    Squash::Ruby.configure :api_host => 'http://ex.icicletech.com/',
-    :api_key => 'c54a4ccc-3dd1-4101-a023-e9d1e8104a6e',
-    :disabled => (Rails.env.development? || Rails.env.test?)
   end
 end
+
+Squash::Ruby.configure :api_host => 'http://ex.icicletech.com/',
+  :api_key => 'c54a4ccc-3dd1-4101-a023-e9d1e8104a6e',
+  :disabled => (Rails.env.development? || Rails.env.test?)

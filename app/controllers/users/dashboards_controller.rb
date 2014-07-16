@@ -16,4 +16,8 @@ class Users::DashboardsController < ApplicationController
                          stream: 'true',
                          buffer_size: '4096'
   end
+
+  def squash_test
+    nil.id
+  end
 end
