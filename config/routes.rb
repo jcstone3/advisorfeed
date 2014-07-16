@@ -22,6 +22,7 @@ AdvisorFeed::Application.routes.draw do
   end
 
   root :to => redirect("/users/sign_in")
+  get '/squash' => 'users/dashboards#squash_test'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -81,7 +82,6 @@ AdvisorFeed::Application.routes.draw do
   namespace :users do
     get '/download_report' => 'dashboards#download_report'
     get '/dashboard' => 'dashboards#index'
-    get '/squash' => 'dashboard#squash_test'
   end
 
 end
