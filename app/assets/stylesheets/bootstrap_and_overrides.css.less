@@ -143,9 +143,6 @@ html,body {
   background: @client-vcmi-background;
 }
 
-
-
-
 /***********************************************************************************************/
 /* Navbar */
 /***********************************************************************************************/
@@ -809,21 +806,6 @@ textarea {
   h1 {
     font-size: 31.5px;
   }
-  // .user_email {
-  //   .input-prepend {
-  //     margin-left: 3px;
-  //     .string {
-  //       width: 75%;
-  //     }
-  //   }
-  // }
-  // .user_phone {
-  //   .input-prepend {
-  //     .string {
-  //       width: 64%;
-  //     }
-  //   }
-  // }
   .form-actions {
     background: @client-vcmi-background;
     border-top: none;
@@ -1066,19 +1048,44 @@ textarea {
   }
 }
 
-.users-edit, .users-new, .users-update, .users-create {
-  .user_secret_text {
-    position: relative;
-    bottom: 10px;
-    .controls {
-      margin-left: 5px;
+// .user_secret_text {
+//   position: relative;
+//   bottom: 10px;
+//   .controls {
+//     margin-left: 5px;
 
-      #user_secret_text {
-        width: 520px;
-      }
-    }
+//     #user_secret_text {
+//       width: 520px;
+//     }
+//   }
+// }
+
+.sessions-new,.passwords-new,.invitations-edit,.invitations-update,.invitations-edit,.passwords-create,.passwords-edit,.passwords-update {
+  .form-inputs,.auth-form {
+    width: 285px;
+    margin: 0 auto;
+  }
+  .form-inputs label {
+    display: inline-block;
+    float: left;
+  }
+  .auth-form label {
+    display: inline-block;
+  }
+  .password,.user_secret_text {
+    text-align: left;
+  }
+  .user_remember_me,.user_terms_of_service label {
+    display: none;
   }
 }
+.invitations-update {
+  .user_password_confirmation {
+    label {
+      margin-left: -85px;
+      margin-top: 25px;
+    }
+  }
 
 .acceptance-text {
   width: 350px;
