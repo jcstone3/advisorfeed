@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 
   validates_presence_of :first_name, :message => "Can't be blank"
   validates_presence_of :last_name, :message => "Can't be blank"
-  validates_presence_of :secret_text, :message => "Can't be blank"
+  validates_presence_of :secret_code, :message => "Can't be blank"
   validates_format_of :first_name, :with =>/^[a-z A-Z][a-z A-Z 0-9_]*$/, :allow_blank => true, :message => "Should contain only alphabets", :multiline => true
   validates_format_of :last_name, :with =>/^[a-z A-Z][a-z A-Z 0-9_]*$/, :allow_blank => true, :message => "Should contain only alphabets", :multiline => true
 
@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
   validates_format_of :email, :with  => Devise.email_regexp, :allow_blank => true, :if => :email_changed?, :message => "Invalid email address"
 
   # custom validation for secret text matching
-  validates :secret_text, secret_text: true, :if => :has_user_secret
+  validates :secret_code, secret_code: true, :if => :has_user_secret
 
   validates :terms_of_service, acceptance: true
 
