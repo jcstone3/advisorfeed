@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     accept_values_for (0.7.0)
       activemodel (>= 3, < 5)
