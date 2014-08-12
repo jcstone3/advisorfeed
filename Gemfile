@@ -40,6 +40,9 @@ gem 'aws-sdk'
 # Use unicorn as the app server
 gem 'unicorn'
 
+#Exception Notification
+gem "sentry-raven"
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', :require => false
