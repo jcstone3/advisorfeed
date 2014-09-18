@@ -97,6 +97,16 @@ class Admin::UsersController < ApplicationController
     end
   end
 
+
+  # Method to send the notification
+  def send_notification
+    user = User.find(params[:user_id])
+    NotificationWorker.perform_async(user.id)
+
+    flash[:success] = "Notification to #{user.first_name}#{' '}#{user.last_name} will be sent"
+    redirect_to admin_users_path
+  end
+
   private
 
   def user_params

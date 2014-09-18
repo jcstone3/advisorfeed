@@ -17,6 +17,7 @@ AdvisorFeed::Application.routes.draw do
       get '/view_reports' => "users#view_reports", :as => "view_reports"
       get '/edit_password' => "users#edit_password", :as => "edit_password"
       put '/update_password' => "users#update_password", :as => "update_password"
+      post '/send_notification' => "users#send_notification", :as => "send_notification"
       resource :attachments
     end
   end

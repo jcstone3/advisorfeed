@@ -101,6 +101,8 @@ a {
 @client-vcmi-brandOrange: #DE7A1C;
 @client-vcmi-brandBrown: #666666;
 @client-vcmi-linkColor: #de7a1c;
+@client-vcmi-brandOrangeNotify: #EB2E0A;
+
 
 body {
   margin-top: 90px;
@@ -315,7 +317,7 @@ button.btn, input[type="submit"].btn {
     padding-right: 4px;
   }
 }
-.action-report,.action-invite,.action-upload {
+.action-report,.action-invite,.action-upload,.action-notify {
   padding: 7px 8px;
   font-size: 10px;
   border-radius: 3px;
@@ -335,6 +337,9 @@ button.btn, input[type="submit"].btn {
 }
 .action-invite {
   background: @client-vcmi-brandDarkGreen;
+}
+.action-notify {
+  background: @client-vcmi-brandOrangeNotify;
 }
 .icons {
   float: left;

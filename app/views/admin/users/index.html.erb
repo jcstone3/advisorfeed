@@ -36,6 +36,8 @@
             <% else %>
               <%= link_to("<i class='icon-envelope'></i> Invite User".html_safe, admin_invitation_path(:id => user.id), method: :post, :class => "action-invite") %>
             <% end %>
+            <%= link_to("<i class='icon-envelope'></i> Notify".html_safe, admin_user_send_notification_path(:user_id => user.id), method: :post, :class => "action-notify") %>
+
           </div>
 
           <div class="user-actions">
