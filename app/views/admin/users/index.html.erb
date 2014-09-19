@@ -4,10 +4,11 @@
       <h2>Clients</h2>
     </div>
     <div class="span8">
-    <div class="span4">
+    <div class="span4 search">
            <%= form_tag admin_search_user_path, :method => :get, :remote => true do %>
         <p>
           <%= text_field_tag :search, params[:search], :class => "search-query", :placeholder => "Search" %>
+          <span>Please search with minumun 3 letters</span>
           <button type= "submit" class="btn btn-submit" style="display:none;">
             <i class="icon-search"></i>
          </button>
