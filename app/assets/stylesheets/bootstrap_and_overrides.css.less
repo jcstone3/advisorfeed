@@ -1123,9 +1123,26 @@ abbr[title], abbr[data-original-title] {
   }
 }
 
+/************************************************************************************************
+/* Search UI */
+/***********************************************************************************************/
 .search {
+  display: inline-block;
+  float: right;
+  margin-top: 8px;
+  margin-left: 20px;
   p {
-      width: 235px;
-      font-size: 11px;
+    width: 235px;
+    font-size: 11px;
+    .search-query {
+      border-radius: 4px;
+      box-shadow: none;
+      border: 1px solid rgba(0,0,0,0.2);
+      height: 32px;
+    }
+    span {
+      font-style: italic;
+      float: right;
+    }
   }
 }
