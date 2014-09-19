@@ -10,6 +10,7 @@ AdvisorFeed::Application.routes.draw do
   #admin settingss
   namespace :admin do
     get '/users' => "users#index", :as => "users"
+    get '/search_user' => 'users#search_user', :as => "search_user"
     root :to =>  "users#index"
     resources :users do
       get '/download_report' => "users#download_report", :as => "download_report"

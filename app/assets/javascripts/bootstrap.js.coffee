@@ -28,3 +28,12 @@ $ ->
 
   # Fallback placeholder for older browsers
   $("input[type=text], textarea").placeholder()
+
+$ ->
+  $.setAjaxPagination = ->
+    $('.pagination-ajax-container a').click (event) ->
+      event.preventDefault()
+      $.ajax type: 'GET', url: $(@).attr('href'), dataType: 'script'
+      false
+
+  $.setAjaxPagination()

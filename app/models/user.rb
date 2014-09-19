@@ -28,6 +28,9 @@ class User < ActiveRecord::Base
 
   validates :terms_of_service, acceptance: true
 
+  include PgSearch
+  pg_search_scope :search_by_full_name, :against => [:first_name, :last_name], :using => {:tsearch => {:dictionary => "english",:any_word => true, :prefix => true} }
+
   def has_user_secret
     return true if enable_validation
   end

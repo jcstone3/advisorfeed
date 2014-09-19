@@ -1,0 +1,40 @@
+<table class="table client-table table-striped">
+  <thead>
+    <tr>
+      <th>Clients</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody class="table-items">
+    <% users.each do |user| %>
+    <tr>
+      <td><%= user.first_name %>
+        <span>
+          <% if user.last_name.present? %>
+            <%= user.last_name.truncate(10) %>
+          <% end %>
+        </span>
+      </td>
+      <td>
+        <div class="icons">
+          <%= link_to "<i class='icon-cloud-upload'></i> Upload Report".html_safe, new_admin_user_attachments_path(:user_id => user.id),  { :class=>"action-upload" } %>
+          <%= link_to "<i class='icon-bar-chart'></i> View Reports".html_safe, admin_user_view_reports_path(:user_id => user.id),  { :class=>"action-report" } %>
+          <% if user.invitation_token.present? %>
+            <%= link_to("<i class='icon-envelope'></i> Re-invite User".html_safe, admin_invitation_path(:id => user.id), method: :post, :class => "action-invite") %>
+          <% else %>
+            <%= link_to("<i class='icon-envelope'></i> Invite User".html_safe, admin_invitation_path(:id => user.id), method: :post, :class => "action-invite") %>
+          <% end %>
+          <%= link_to("<i class='icon-envelope'></i> Notify".html_safe, admin_user_send_notification_path(:user_id => user.id), method: :post, :class => "action-notify") %>
+
+        </div>
+
+        <div class="user-actions">
+          <span class=""><%= link_to("<i data-toggle='tooltip' title='Reset Password' class='icon-unlock'></i>".html_safe, admin_user_edit_password_path(:user_id => user.id)) %></span>
+          <span class=""><%= link_to("<i data-toggle='tooltip' title='Edit Client Details' class='icon-edit'></i>".html_safe, edit_admin_user_path(:id => user.id)) %></span>
+          <span class=""><%= link_to("<i data-toggle='tooltip' title='Delete Client' class='icon-remove'></i>".html_safe, admin_user_path(:id => user.id), method: :delete, :confirm => "Are you sure? you want to delete #{user.first_name}#{' '}#{user.last_name}" ) %></span>
+        </div>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

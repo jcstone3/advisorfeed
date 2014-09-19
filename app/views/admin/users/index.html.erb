@@ -4,6 +4,17 @@
       <h2>Clients</h2>
     </div>
     <div class="span8">
+    <div class="span4">
+           <%= form_tag admin_search_user_path, :method => :get, :remote => true do %>
+        <p>
+          <%= text_field_tag :search, params[:search], :class => "search-query", :placeholder => "Search" %>
+          <button type= "submit" class="btn btn-submit" style="display:none;">
+            <i class="icon-search"></i>
+         </button>
+        </p>
+      <% end %>
+    </div>
+
       <%= link_to "<i class='icon-plus'></i> Add Client".html_safe, new_admin_user_path,  { :class=>"action-btn-left" } %>
     </div>
   </div>
@@ -54,7 +65,7 @@
 <div class="container-fluid pagination-container">
   <div class="row-fluid">
     <div class="span12">
-      <%= will_paginate @posts, :previous_label => '<i class="icon-chevron-left" data-toggle="tooltip" title="" data-original-title="Previous Clients"></i>'.html_safe, :next_label => '<i class="icon-chevron-right" data-toggle="tooltip" title="" data-original-title="Next Clients"></i>'.html_safe %>
+      <%= will_paginate @users, :previous_label => '<i class="icon-chevron-left" data-toggle="tooltip" title="" data-original-title="Previous Clients"></i>'.html_safe, :next_label => '<i class="icon-chevron-right" data-toggle="tooltip" title="" data-original-title="Next Clients"></i>'.html_safe %>
     </div>
   </div>
 </div>

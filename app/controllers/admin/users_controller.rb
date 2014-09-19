@@ -107,6 +107,18 @@ class Admin::UsersController < ApplicationController
     redirect_to admin_users_path
   end
 
+  def search_user
+    search_text = params[:search].strip
+    if !search_text.blank?
+      @users = User.search_by_full_name(search_text).paginate(:page => params[:page], :per_page => 25).order(:last_name)
+    else
+      @users = User.paginate(:page => params[:page], :per_page => 25).order(:last_name)
+    end
+   respond_to do |format|
+      format.js
+    end
+  end
+
   private
 
   def user_params

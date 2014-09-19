@@ -1,0 +1,3 @@
+$(".client-table").parent("div.row-fluid").html("<%= escape_javascript(render :partial => 'users_list', :locals => { :users => @users } ) %>");
+$("div.pagination-container").html("<%= escape_javascript(render :partial => 'users_pagination', :locals => { :users => @users } ) %>");
+$.setAjaxPagination();
