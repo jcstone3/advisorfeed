@@ -1,2 +1,165 @@
-<p> Hi, <%= @user.first_name %></p>
-<p> Please check the new report uploaded</p>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=320, target-densitydpi=device-dpi">
+    <!--[if gte mso 9]>
+    <style _tmplitem="108" >
+      .article-content ol, .article-content ul {
+      margin: 0 0 0 24px;
+      padding: 0;
+      list-style-position: inside;
+      }
+    </style>
+    <![endif]-->
+  </head>
+  <body style="width:100%!important;background-color:#ececec;font-family:Helvetica Neue,Arial,Helvetica,sans-serif">
+    <table width="100%">
+      <tbody>
+        <tr><td align="center" bgcolor="#ececec">
+          <table style="margin:0 10px" width="640" cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+            <tr>
+              <td width="640" height="20"></td>
+            </tr>
+            <tr>
+              <td width="640">
+                <table width="640" cellpadding="0" cellspacing="0" border="0" bgcolor="#41464A" style="border-radius:6px 6px 0px 0px;background-color:#3fc3d8;color:#e7cba3;background:linear-gradient(to right,#de7a1c 0%,#de7a1c 33%,#9ea374 66%,#524f27 100%)">
+
+                  <tbody><tr><td width="255" valign="middle" align="right">
+                    <table width="255" cellpadding="0" cellspacing="0" border="0">
+                      <tbody><tr>
+                        <td width="255" height="8" style="height:5px"></td>
+                      </tr>
+                    </tbody></table>
+                  </td>
+                </tr></tbody></table>
+              </td>
+            </tr>
+            <tr>
+              <td width="640" align="center" bgcolor="#3FC3D8" style="background:#f7f7f7;height:70px">
+                <table width="640" cellpadding="0" cellspacing="0" border="0">
+                  <tbody><tr>
+                    <td width="30"></td>
+                    <td width="580" height="50">
+                     <img alt="Logo" src="http://i.imgur.com/8wMjDtz.png" style="width:200px;max-height:44px">
+                   </td>
+                   <td width="30"></td>
+                 </tr>
+
+               </tbody></table>
+             </td>
+            </tr>
+            <tr>
+              <td width="640" height="45" bgcolor="#ffffff"></td>
+            </tr>
+            <tr>
+              <td width="640" bgcolor="#ffffff">
+                <table width="640" cellpadding="0" cellspacing="0" border="0">
+                  <tbody><tr>
+                    <td width="30"></td>
+                    <td width="580">
+                      <table width="580" cellpadding="0" cellspacing="0" border="0">
+                        <tbody><tr>
+                          <td width="580">
+                            <p align="left" style="font-size: 24px;line-height: 32px; color: #41464A; font-weight:bold; margin-top:0px; margin-bottom:18px;">
+                              <u></u>Hello <%= @user.first_name %>&nbsp;<%= @user.last_name %>,<u></u>
+                            </p>
+                            <em style="color:#8c8a8b;font-style:normal;font-size:16px;line-height:23px">
+                              This email is to alert you that your 3rd Quarter, 2014 report has been uploaded and awaiting your review.
+                              <br></br>
+                              <p>
+                                Please click on the link below to accept your invitation.
+                              </p>
+                            </em>
+
+                            </td>
+                          </tr>
+                        </tbody></table>
+
+                      </td>
+                      <td width="30"></td>
+                    </tr>
+
+                    <tr>
+                      <td width="30"></td>
+                      <td width="275" valign="top">
+                        <table width="275" cellpadding="0" cellspacing="0" border="0">
+                          <tbody><tr>
+                            <td width="275">
+                              <p align="left">
+                                <u></u>
+                              </p><table>
+                              <tbody><tr>
+                                <td align="center" width="300" bgcolor="#cf142b" style="background:#9a5513;padding-top:15px;padding-bottom:12px;border-radius:4px;color:#fff;font-weight:bold;text-decoration:none;font-family:Helvetica,Arial,sans-serif;display:block;width:200px;margin-top: 20px;">
+                                  <%= link_to 'Login to Portal', new_user_session_url, {:style=>'color: #fff; text-decoration: none;'} %></td>
+                                </tr>
+                              </tbody></table><u></u><p></p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="275" height="10"></td>
+                          </tr>
+                        </tbody></table>
+                      </td>
+                      <td width="30"></td>
+                    </tr>
+
+
+                    <tr>
+                      <td width="30"></td>
+                      <td width="580">
+                        <table width="580" cellpadding="0" cellspacing="0" border="0">
+                          <tbody><tr>
+                            <td width="580" style="padding-top:5px;">
+                              <em style="color:#8c8a8b;font-style:normal;font-size:14px;line-height:14px;font-style:italic">
+                                Ensuring the security of your information is our highest priority. We safeguard your information in the following ways.
+
+                                <ul type="disc">
+                                  <li>
+                                    Encryption.
+                                    <p>
+                                      Encryption is the process of encoding information in such a way that only the authorized party can read the information. The portal traffic runs entirely over 128-bit encrypted SSL (https).
+                                    </p>
+                                  </li>
+                                  <li>
+                                    Password masking / separate storage.
+                                    <p>
+                                      Password masking is the practice of replacing the characters that a user types into the password entry field with bullets. We also hash the password before storing using application credentials that are kept separate from the database and code base for additional security.
+                                    </p>
+                                  </li>
+                                </ul>
+                              </em>
+                              <em style="color:#8c8a8b;font-style:normal;font-size:16px;line-height:23px;">
+                                <p>
+                                  We have provided a password reset button on the portal if you should forget or lose your password.
+                                </p>
+                                <p>
+                                  If you would like to continue to receive your reports via mail please contact Megan McElroy at 503-731-7313 or <a href="mailto:megan@vcmi.net" target="_blank">megan@vcmi.net</a>.
+                                </p>
+                              </em>
+                            </td>
+                          </tr>
+                        </tbody></table>
+                      </td>
+                      <td width="30"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td width="640" height="45" bgcolor="#ffffff"></td>
+            </tr>
+            <tr>
+              <td width="640" height="60"></td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="yj6qo"></div>
+<div class="adL"></div>
+</body>
+</html>
