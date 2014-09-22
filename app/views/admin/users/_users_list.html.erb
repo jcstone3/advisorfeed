@@ -1,3 +1,13 @@
+<% if users.blank? %>
+<table class="table client-table table-striped noclients">
+  <tbody class="table-items">
+    <tr>
+      <td>No matches! <br/>
+      Try searching for something less specific.</td>
+      </tr>
+  </tbody>
+</table>
+<% else %>
 <table class="table client-table table-striped">
   <thead>
     <tr>
@@ -43,3 +53,4 @@
     <% end %>
   </tbody>
 </table>
+<% end %>
