@@ -15,7 +15,9 @@
           <% end %>
         </span><br/>
         <span  class="notification-text">
-         <i>Last Notified on <%= user.notified_at.strftime("%d %b, %Y") unless user.notified_at.blank? %> </i>
+         <% if !user.notified_at.blank? %>
+          <i>Last Notified on <%= user.notified_at.strftime("%d %b, %Y") %></i>
+          <% end %>
         </span>
       </td>
       <td>
