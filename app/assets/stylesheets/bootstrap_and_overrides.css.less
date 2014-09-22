@@ -151,7 +151,7 @@ html,body {
 .breadbar {
   margin-bottom: 30px;
   padding: 0;
-  width: 785px;
+  width: 900px;
   margin: 0 auto;
   h2 {
     font-size: 29px;
@@ -318,13 +318,16 @@ button.btn, input[type="submit"].btn {
   }
 }
 .action-report,.action-invite,.action-upload,.action-notify {
-  padding: 7px 8px;
+  padding: 4px 8px;
   font-size: 10px;
   border-radius: 3px;
   color: white !important;
   text-transform: uppercase;
   font-weight: 700;
   margin-right: 15px;
+  display: inline-block;
+  min-width: 90px;
+  text-align: center;
   i {
     padding-right: 4px;
   }
@@ -471,7 +474,7 @@ button.btn, input[type="submit"].btn {
 .client-table {
   // box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.2), inset 0 0 0px rgba(0, 0, 0, 0.1);
-  width: 785px;
+  width: 900px;
   margin: 0 auto;
   margin-top: 30px;
   tr {
@@ -489,17 +492,20 @@ button.btn, input[type="submit"].btn {
       td {
         padding: 20px 20px;
         border: none;
+        vertical-align: middle;
         &:nth-child(1) {
           font-weight: 700;
           font-size: 16px;
           text-overflow: ellipsis;
           overflow: hidden;
-          max-width: 150px;
+          min-width: 250px;
         }
       }
       .icon-remove {
         color: @client-vcmi-brandOrange;
         font-size: 16px;
+        position: relative;
+        top: 2px;
       }
       .icon-edit {
         color: #40464A;
@@ -507,11 +513,15 @@ button.btn, input[type="submit"].btn {
         top: 1px;
         margin-right: 7px;
         font-size: 15px;
+        position: relative;
+        top: 2px;
       }
       .icon-unlock {
         color: #40464A;
         font-size: 15px;
         margin-right: 12px;
+        position: relative;
+        top: 2px;
       }
     }
     > tr:nth-child(odd) > td, > tr:nth-child(odd) > th {
@@ -1130,7 +1140,7 @@ abbr[title], abbr[data-original-title] {
   display: inline-block;
   float: left;
   margin-top: 8px;
-  margin-left: 142px;
+  margin-left: 200px;
   p {
     width: 235px;
     font-size: 11px;
