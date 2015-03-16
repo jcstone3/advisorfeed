@@ -100,12 +100,18 @@ class Admin::UsersController < ApplicationController
 
   # Method to send the notification
   def send_notification
+
     user = User.find(params[:user_id])
     user.update_attribute(:notified_at, Time.now)
     NotificationWorker.perform_async(user.id)
 
     flash[:success] = "Notification to #{user.first_name}#{' '}#{user.last_name} will be sent"
-    redirect_to admin_users_path
+    #Redirect to report page is notify i clicked from report page
+    if params[:report_id].presence
+      redirect_to admin_user_view_reports_path(:user_id => user.id)
+    else
+      redirect_to admin_users_path
+    end
   end
 
   def search_user

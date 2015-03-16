@@ -4,10 +4,13 @@
       <div class="row-fluid">
         <div class="span12">
           <div class="span7">
-            <h2 class="client-name"><%= link_to "<i class='icon-angle-left'></i> Client: #{@user.first_name}#{' '}#{@user.last_name}".html_safe, admin_users_path, :class => "bread-left" %></h2>
+            <h2 class="client-name">
+            <%= link_to "<i class='icon-angle-left'></i> Client: #{@user.first_name}#{' '}#{@user.last_name}".html_safe, admin_users_path, :class => "bread-left" %>
+             </h2>
+
           </div>
           <div class="span5">
-            <%#= link_to "<i class='icon-cloud-upload'></i> <span>Upload New Report</span>".html_safe, new_admin_user_attachments_path(:user_id => @user.id),  { :class=>"action-btn-left" } %>
+            <%= link_to "<i class='icon-envelope'></i> Notify".html_safe, admin_user_send_notification_path(:user_id => @user.id, :report_id => @latest_attachment.id), method: :post , :class=>"action-btn-left notify-button"  %>
           </div>
         </div>
       </div>
