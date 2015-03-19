@@ -10,7 +10,12 @@
 
           </div>
           <div class="span5">
-            <%= link_to "<i class='icon-envelope'></i> Notify".html_safe, admin_user_send_notification_path(:user_id => @user.id, :report_id => @latest_attachment.id), method: :post , :class=>"action-btn-left notify-button"  %>
+            <% if  @latest_attachment.present? %>
+              <%= link_to "<i class='icon-envelope'></i> Notify".html_safe, admin_user_send_notification_path(:user_id => @user.id, :report_id => @latest_attachment.id), method: :post , :class=>"action-btn-left notify-button" %>
+            <% else %>
+              <span style="background-color:#C2C0BF;padding: 10px 20px;
+              background: darken(@client-vcmi-brandOrange, 15%); font-weight: 700; border-radius: 5px;float: right; margin-top: 10px;"><i class='icon-envelope'></i> &nbsp; Notify</span>
+            <% end %>
           </div>
         </div>
       </div>
