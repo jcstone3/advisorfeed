@@ -10,8 +10,8 @@ Admin.delete_all
 
 @admin = Admin.new
 @admin.email = "admin@advisorfeed.com"
-@admin.password = "5eTatec&Tr"
-@admin.password_confirmation = "5eTatec&Tr"
+@admin.password = "0Gd2wZtwczVy"
+@admin.password_confirmation = "0Gd2wZtwczVy"
 @admin.first_name = Settings.first_name
 @admin.last_name = Settings.last_name
 @admin.save
