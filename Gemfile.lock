@@ -475,6 +475,7 @@ DEPENDENCIES
   simplecov
   syntax
   therubyracer
+  tilt
   turbolinks
   twitter-bootstrap-rails
   uglifier (>= 1.3.0)

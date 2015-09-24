@@ -81,6 +81,7 @@ gem 'settingslogic', '~> 2.0.9'
 gem 'sidekiq'
 gem 'redis'
 
+gem 'tilt'
 #Development
 group :development do
 	gem 'bullet'
