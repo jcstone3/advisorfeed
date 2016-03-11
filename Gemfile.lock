@@ -289,7 +289,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rainbow (2.0.0)
     raindrops (0.13.0)
-    rake (10.3.2)
+    rake (11.1.0)
     random_data (1.6.0)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.4)
