@@ -16,6 +16,6 @@ class Usermailer < ActionMailer::Base
   # Method to send the notification instruction to client
   def notification_instructions(user)
     @user = user
-    mail(:to => user.email, :subject => "Quarter Performance Report from Vision Capital")
+    mail(:to => user.email, :subject => "3rd Quarter Performance Report from Vision Capital")
   end
 end
